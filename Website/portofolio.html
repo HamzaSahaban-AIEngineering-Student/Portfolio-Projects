@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza Shaban | Portfolio & Systems Engineer</title>
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f916.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .heading-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Dark Mode Background Mesh Glow */
+        .dark .glow-bg {
+            background-color: #070913;
+            background-image:
+                radial-gradient(circle at 50% 12%, rgba(16, 185, 129, 0.18) 0%, transparent 55%),
+                radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 15% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 45%);
+        }
+
+        /* Light Mode Background Mesh Glow */
+        .glow-bg {
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(circle at 50% 12%, rgba(16, 185, 129, 0.12) 0%, transparent 55%),
+                radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 15% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 45%);
+        }
+
+        /* Gradient Top Border Card Container */
+        .top-glow-card {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .top-glow-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #06b6d4 0%, #10b981 50%, #6366f1 100%);
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+
+        .top-glow-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body
+    class="glow-bg min-h-screen flex flex-col justify-between text-slate-800 dark:text-slate-200 selection:bg-cyan-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header
+        class="border-b border-slate-200/80 dark:border-white/5 bg-white/70 dark:bg-[#070913]/80 backdrop-blur-xl sticky top-0 z-50 px-6 py-4 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <span class="w-3 h-3 bg-emerald-500 rounded-full animate-ping"></span>
+                <span class="heading-font font-black text-2xl tracking-tight text-slate-900 dark:text-white">HAMZA
+                    SHABAN<span class="text-cyan-500 dark:text-cyan-400">.</span></span>
+            </div>
+
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="/"
+                    class="bg-slate-100 dark:bg-[#12172a] border border-slate-300 dark:border-white/10 hover:border-cyan-500 text-slate-800 dark:text-slate-200 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all"
+                    data-i18n="back_home">
+                    &larr; Root Rob Home
+                </a>
+
+                <!-- Theme Toggle Button -->
+                <button onclick="toggleTheme()"
+                    class="bg-slate-100 dark:bg-[#12172a] border border-slate-300 dark:border-white/10 text-slate-800 dark:text-slate-200 p-2 rounded-lg text-sm hover:border-cyan-500 transition-all">
+                    <span id="themeIcon">☀️</span>
+                </button>
+
+                <!-- Language Selector -->
+                <select id="langSelect" onchange="changeLanguage(this.value)"
+                    class="bg-slate-100 dark:bg-[#12172a] border border-slate-300 dark:border-white/10 text-xs text-slate-800 dark:text-white rounded-lg px-3 py-2 focus:outline-none focus:border-cyan-500 cursor-pointer">
+                    <option value="en">EN</option>
+                    <option value="ar">AR</option>
+                    <option value="zh">ZH</option>
+                </select>
+
+                <a href="https://wa.me/972592583440" target="_blank"
+                    class="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-extrabold px-5 py-2 text-xs rounded-lg transition-all shadow-md"
+                    data-i18n="contact">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
+            <div
+                class="inline-block bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+                ⚡ Software Engineer & Founder of Root Rob
+            </div>
+            <h1 class="heading-font text-3xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight text-slate-900 dark:text-white"
+                data-i18n="hero_title">
+                Building Systems, AI Agents & <br>
+                <span class="text-cyan-600 dark:text-cyan-400">Infrastructure Solutions</span>
+            </h1>
+            <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed mb-8"
+                data-i18n="hero_subtitle">
+                Demonstrated technical capability across computer science core fundamentals, IoT, C++ engineering, and
+                autonomous self-hosted AI architectures.
+            </p>
+
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-6 sm:p-8 rounded-2xl max-w-4xl mx-auto text-left md:text-center text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed shadow-lg"
+                data-i18n="hero_bio">
+                I am a Software Engineering student and the founder of <strong
+                    class="text-cyan-600 dark:text-cyan-400">Root Rob</strong>. My goal is to expand Root Rob into a
+                global benchmark while serving my community through free digital security awareness courses and
+                innovative automated solutions. I actively collaborate with global companies and maintain rigorous
+                discipline as a competitive powerlifter.
+            </div>
+        </div>
+
+        <!-- Section 1: Currently In Progress -->
+        <div class="mb-20" data-aos="fade-up" data-aos-duration="900">
+            <div class="flex justify-between items-end mb-8 border-b border-slate-200 dark:border-slate-800 pb-4">
+                <div>
+                    <h2 class="heading-font text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white"
+                        data-i18n="progress_title">Currently Working On</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1" data-i18n="progress_sub">
+                        Real-time status of active learning paths and targets</p>
+                </div>
+                <span
+                    class="text-xs font-semibold text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-lg">9
+                    Active Objectives</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-5 rounded-xl shadow-md"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font font-bold text-base text-slate-900 dark:text-white">Typing Speed</h3>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">Klavaro</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">Target: 60 WPM (Current: 48.3 WPM)</p>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-cyan-500 h-full rounded-full" style="width: 81%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs mt-2">
+                        <span class="text-cyan-600 dark:text-cyan-400 font-semibold">81% Completed</span>
+                        <span class="text-slate-500">11.7 remaining</span>
+                    </div>
+                </div>
+
+                <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-5 rounded-xl shadow-md"
+                    data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font font-bold text-base text-slate-900 dark:text-white">English Course</h3>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">ATG</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">11 / 12 Levels Completed</p>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-cyan-500 h-full rounded-full" style="width: 92%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs mt-2">
+                        <span class="text-cyan-600 dark:text-cyan-400 font-semibold">92% Completed</span>
+                        <span class="text-slate-500">1 Level left</span>
+                    </div>
+                </div>
+
+                <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-5 rounded-xl shadow-md"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font font-bold text-base text-slate-900 dark:text-white">Social Engineering
+                        </h3>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">Book</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">Science of Human Hacking (1/8 Chapters)
+                    </p>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-cyan-500 h-full rounded-full" style="width: 13%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs mt-2">
+                        <span class="text-cyan-600 dark:text-cyan-400 font-semibold">13% Completed</span>
+                        <span class="text-slate-500">7 Chapters left</span>
+                    </div>
+                </div>
+
+                <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-5 rounded-xl shadow-md"
+                    data-aos="fade-up" data-aos-delay="250">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font font-bold text-base text-slate-900 dark:text-white">Create 10 AI Agents
+                        </h3>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">n8n</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">1 / 10 Active Systems Deployed</p>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-cyan-500 h-full rounded-full" style="width: 10%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs mt-2">
+                        <span class="text-cyan-600 dark:text-cyan-400 font-semibold">10% Completed</span>
+                        <span class="text-slate-500">9 Systems left</span>
+                    </div>
+                </div>
+
+                <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-5 rounded-xl shadow-md"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font font-bold text-base text-slate-900 dark:text-white">CCNA Course</h3>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">Ali Al-Jazy</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">6 / 50 Hours Completed</p>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-cyan-500 h-full rounded-full" style="width: 12%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs mt-2">
+                        <span class="text-cyan-600 dark:text-cyan-400 font-semibold">12% Completed</span>
+                        <span class="text-slate-500">44 Hours left</span>
+                    </div>
+                </div>
+
+                <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-5 rounded-xl shadow-md"
+                    data-aos="fade-up" data-aos-delay="350">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font font-bold text-base text-slate-900 dark:text-white">Target Weight</h3>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">Gym</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">0 / 13 Completed Target</p>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-slate-400 dark:bg-slate-600 h-full rounded-full" style="width: 0%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs mt-2">
+                        <span class="text-slate-500 font-semibold">0% Started</span>
+                        <span class="text-slate-500">13 remaining</span>
+                    </div>
+                </div>
+
+                <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-5 rounded-xl shadow-md"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font font-bold text-base text-slate-900 dark:text-white">C++ Course #5</h3>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">M. Hadhoud</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">50 Videos Planned</p>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-slate-400 dark:bg-slate-600 h-full rounded-full" style="width: 0%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs mt-2">
+                        <span class="text-slate-500 font-semibold">0% Started</span>
+                        <span class="text-slate-500">50 Videos left</span>
+                    </div>
+                </div>
+
+                <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-5 rounded-xl shadow-md"
+                    data-aos="fade-up" data-aos-delay="450">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font font-bold text-base text-slate-900 dark:text-white">Electronics Course
+                        </h3>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">IEEE</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">30 Hours Planned</p>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-slate-400 dark:bg-slate-600 h-full rounded-full" style="width: 0%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs mt-2">
+                        <span class="text-slate-500 font-semibold">0% Started</span>
+                        <span class="text-slate-500">30 Hours left</span>
+                    </div>
+                </div>
+
+                <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-5 rounded-xl shadow-md"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="heading-font font-bold text-base text-slate-900 dark:text-white">Arduino Module</h3>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">IEEE</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">30 Hours Planned</p>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-slate-400 dark:bg-slate-600 h-full rounded-full" style="width: 0%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs mt-2">
+                        <span class="text-slate-500 font-semibold">0% Started</span>
+                        <span class="text-slate-500">30 Hours left</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Completed Achievements -->
+        <div class="mb-20" data-aos="fade-up" data-aos-duration="900">
+            <div class="flex justify-between items-end mb-8 border-b border-slate-200 dark:border-slate-800 pb-4">
+                <div>
+                    <h2 class="heading-font text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white"
+                        data-i18n="completed_title">Completed Courses & History</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1" data-i18n="completed_sub">Full
+                        verified coursework log (100% Completion Progress)</p>
+                </div>
+                <span
+                    class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-lg">21
+                    Completed Modules</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <script>
+                    const modules = [
+                        { academy: "Learn More Academy", date: "27/8/2025", title: "HTML & CSS", count: "25 Videos" },
+                        { academy: "Learn More Academy", date: "25/8/2025", title: "ICDL Course", count: "9 Videos" },
+                        { academy: "Learn More Academy", date: "28/2/2026", title: "Funded Ads", count: "9 Videos" },
+                        { academy: "IUG", date: "10/2/2026", title: "Calculus 'A'", count: "6 Chapters" },
+                        { academy: "IUG", date: "10/3/2026", title: "Practical Physics 'A'", count: "8 LABs" },
+                        { academy: "IUG", date: "10/4/2026", title: "Electric Circuits Laboratory", count: "8 LABs" },
+                        { academy: "IUG", date: "10/5/2026", title: "Basics of Engineering", count: "17 Lectures" },
+                        { academy: "IUG", date: "10/6/2026", title: "Basics of Scientific Research", count: "6 Lectures" },
+                        { academy: "IUG", date: "10/7/2026", title: "Programming Basics", count: "6 Chapters" },
+                        { academy: "IUG", date: "10/8/2026", title: "Practical Programming Basics", count: "7 LABs" },
+                        { academy: "IUG", date: "10/9/2026", title: "Holy Quran", count: "3 Parts" },
+                        { academy: "Mint Academy", date: "25/5/2026", title: "CyberSecurity Course", count: "75 Hours" },
+                        { academy: "IUG", date: "15/5/2026", title: "Arduino IDE for Beginners", count: "11 Videos" },
+                        { academy: "IUG", date: "20/6/2026", title: "Calculus 'B'", count: "49 Chapters" },
+                        { academy: "IUG", date: "20/6/2026", title: "Digital Design", count: "29 Lectures" },
+                        { academy: "IUG", date: "20/6/2026", title: "Practical Digital Design", count: "7 LABs" },
+                        { academy: "IUG", date: "20/6/2026", title: "Internet of Things (IoT)", count: "22 Modules" },
+                        { academy: "IUG", date: "20/6/2026", title: "Computer Programming", count: "9 Chapters" },
+                        { academy: "IUG", date: "20/6/2026", title: "Computer Programming Lab", count: "9 LABs" },
+                        { academy: "Mohammed Hadhoud", date: "1/7/2026", title: "C++ Course #3", count: "60 Videos" },
+                        { academy: "Mohammed Hadhoud", date: "12/7/2026", title: "C++ Course #4", count: "50 Videos" }
+                    ];
+
+                    document.write(modules.map(m => `
+                        <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-5 rounded-xl shadow-sm flex flex-col justify-between" data-aos="zoom-in">
+                            <div>
+                                <div class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-2">
+                                    <span>${m.academy}</span>
+                                    <span>${m.date}</span>
+                                </div>
+                                <h3 class="heading-font text-base font-bold text-slate-900 dark:text-slate-200">${m.title}</h3>
+                                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">${m.count}</p>
+                            </div>
+                            <div class="mt-4 flex justify-between items-center text-xs">
+                                <span class="text-emerald-600 dark:text-emerald-400 font-semibold">100% Progress</span>
+                                <span class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded text-[10px]">Completed</span>
+                            </div>
+                        </div>
+                    `).join(''));
+                </script>
+            </div>
+        </div>
+
+        <!-- Section 3: Featured Projects -->
+        <div class="mb-20" data-aos="fade-up" data-aos-duration="900">
+            <h2 class="heading-font text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 border-b border-slate-200 dark:border-slate-800 pb-4"
+                data-i18n="projects_title">Featured Projects & Deployments</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div
+                    class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 rounded-2xl overflow-hidden shadow-lg group">
+                    <div class="h-52 bg-slate-800 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+                            alt="Self-Hosted Infrastructure"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-md">Infrastructure
+                            & Cloud</span>
+                        <h3 class="heading-font text-xl font-bold text-slate-900 dark:text-white mt-3 mb-2">Docker & AI
+                            Agent Orchestration</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            Complete self-hosted ecosystem built on VPS using Docker, Nginx Proxy Manager, and
+                            Cloudflare to power automation pipelines securely.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 rounded-2xl overflow-hidden shadow-lg group">
+                    <div class="h-52 bg-slate-800 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+                            alt="Logic & System Design"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="text-xs font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 px-2.5 py-1 rounded-md">Hardware
+                            & Logic Design</span>
+                        <h3 class="heading-font text-xl font-bold text-slate-900 dark:text-white mt-3 mb-2">
+                            Multi-Directional Traffic Controller</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            Simulated state-table transition logic and digital logic design implementation for automated
+                            multi-lane traffic intersections.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Powerlifting Metrics Section -->
+        <div class="mb-12" data-aos="fade-up" data-aos-duration="1000">
+            <div class="flex justify-between items-end mb-8 border-b border-slate-200 dark:border-slate-800 pb-4">
+                <div>
+                    <h2 class="heading-font text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white"
+                        data-i18n="powerlifting_title">Powerlifting Benchmarks</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1" data-i18n="powerlifting_sub">
+                        Current verified records & active strength targets</p>
+                </div>
+                <span
+                    class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-lg">Athletic
+                    Performance</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-6 rounded-2xl shadow-lg"
+                    data-aos="flip-left" data-aos-delay="100">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="heading-font font-bold text-lg text-slate-900 dark:text-white"
+                            data-i18n="bench_press">Bench Press</h3>
+                        <span
+                            class="text-xs bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded border border-emerald-500/20 font-semibold">PR
+                            Lift</span>
+                    </div>
+                    <div class="heading-font text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 mb-2">160
+                        <span class="text-base font-normal text-slate-500">KG</span></div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden mb-3">
+                        <div class="bg-emerald-500 h-full rounded-full" style="width: 72.7%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-600 dark:text-slate-400 font-medium">
+                        <span>Target: 220 KG</span>
+                        <span>72.7% achieved</span>
+                    </div>
+                </div>
+
+                <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-6 rounded-2xl shadow-lg"
+                    data-aos="flip-left" data-aos-delay="200">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="heading-font font-bold text-lg text-slate-900 dark:text-white" data-i18n="deadlift">
+                            Deadlift</h3>
+                        <span
+                            class="text-xs bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded border border-emerald-500/20 font-semibold">PR
+                            Lift</span>
+                    </div>
+                    <div class="heading-font text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 mb-2">250
+                        <span class="text-base font-normal text-slate-500">KG</span></div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden mb-3">
+                        <div class="bg-emerald-500 h-full rounded-full" style="width: 78.1%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-600 dark:text-slate-400 font-medium">
+                        <span>Target: 320 KG</span>
+                        <span>78.1% achieved</span>
+                    </div>
+                </div>
+
+                <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-6 rounded-2xl shadow-lg"
+                    data-aos="flip-left" data-aos-delay="300">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="heading-font font-bold text-lg text-slate-900 dark:text-white" data-i18n="squat">
+                            Squat</h3>
+                        <span
+                            class="text-xs bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded border border-emerald-500/20 font-semibold">PR
+                            Lift</span>
+                    </div>
+                    <div class="heading-font text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 mb-2">220
+                        <span class="text-base font-normal text-slate-500">KG</span></div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden mb-3">
+                        <div class="bg-emerald-500 h-full rounded-full" style="width: 78.5%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-600 dark:text-slate-400 font-medium">
+                        <span>Target: 280 KG</span>
+                        <span>78.5% achieved</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="border-t border-slate-200 dark:border-white/5 bg-white/80 dark:bg-[#070913]/90 p-8 text-center text-xs text-slate-500 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 Hamza Shaban. Root Rob Infrastructure.</p>
+            <div class="flex gap-6 text-slate-600 dark:text-slate-400 font-semibold">
+                <a href="https://www.facebook.com/profile.php?id=61587586629151" target="_blank"
+                    class="hover:text-cyan-500 transition-colors">FB</a>
+                <a href="https://www.instagram.com/eng_hamza_shaban" target="_blank"
+                    class="hover:text-cyan-500 transition-colors">IG</a>
+                <a href="https://www.linkedin.com/in/hamza-shaban-568b7a366/" target="_blank"
+                    class="hover:text-cyan-500 transition-colors">LN</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Script Initialization -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 80
+        });
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeIcon.innerText = '🌙';
+            } else {
+                html.classList.add('dark');
+                themeIcon.innerText = '☀️';
+            }
+        }
+
+        const i18n = {
+            en: {
+                back_home: "&larr; Root Rob Home",
+                contact: "Contact Me",
+                hero_title: 'Building Systems, AI Agents & <br><span class="text-cyan-600 dark:text-cyan-400">Infrastructure Solutions</span>',
+                hero_subtitle: "Demonstrated technical capability across computer science core fundamentals, IoT, C++ engineering, and autonomous self-hosted AI architectures.",
+                hero_bio: 'I am a Software Engineering student and the founder of <strong class="text-cyan-600 dark:text-cyan-400">Root Rob</strong>. My goal is to expand Root Rob into a global benchmark while serving my community through free digital security awareness courses and innovative automated solutions. I actively collaborate with global companies and maintain rigorous discipline as a competitive powerlifter.',
+                progress_title: "Currently Working On",
+                progress_sub: "Real-time status of active learning paths and targets",
+                completed_title: "Completed Courses & History",
+                completed_sub: "Full verified coursework log (100% Completion Progress)",
+                projects_title: "Featured Projects & Deployments",
+                powerlifting_title: "Powerlifting Benchmarks",
+                powerlifting_sub: "Current verified records & active strength targets",
+                bench_press: "Bench Press",
+                deadlift: "Deadlift",
+                squat: "Squat"
+            },
+            ar: {
+                back_home: "&larr; الرئيسية",
+                contact: "تواصل معي",
+                hero_title: 'بناء الأنظمة، وكلاء الذكاء الاصطناعي و <br><span class="text-cyan-600 dark:text-cyan-400">الحلول الرقمية المتقدمة</span>',
+                hero_subtitle: "خبرات وكفاءات تقنية متمثلة في أساسيات علوم الحاسوب، إنترنت الأشياء، برمجة C++ وبناء شبكات الذكاء الاصطناعي ذاتية الاستضافة.",
+                hero_bio: 'أنا طالب هندسة برمجيات ومؤسس شركة <strong class="text-cyan-600 dark:text-cyan-400">Root Rob</strong>. أطمح لتطوير الشركة لتصبح علامة تجارية عالمية، وخدمة مجتمعي مجاناً من خلال تقديم دورات توعوية في الأمن الرقمي وابتكار الحلول الآلية والعمل مع كبرى الشركات العالمية، بالإضافة لكوني لاعب باورليفتنج تنافسي.',
+                progress_title: "الأهداف قيد التنفيذ حالياً",
+                progress_sub: "متابعة حية للمسارات التعليمية والمهارات النشطة",
+                completed_title: "المساقات والدورات المكتملة",
+                completed_sub: "سجل الإنجازات والأكاديميات المكتملة بنسبة 100%",
+                projects_title: "المشاريع والأنظمة المنشورة",
+                powerlifting_title: "أرقام القوة البدنية (Powerlifting)",
+                powerlifting_sub: "الأرقام القياسية الحالية والأهداف المستهدفة",
+                bench_press: "بنش بريس (Bench Press)",
+                deadlift: "ديدليفت (Deadlift)",
+                squat: "سكوات (Squat)"
+            },
+            zh: {
+                back_home: "&larr; Root Rob 首页",
+                contact: "联系我",
+                hero_title: '构建系统、人工智能代理与 <br><span class="text-cyan-600 dark:text-cyan-400">基础设施解决方案</span>',
+                hero_subtitle: "展示在计算机科学核心基础、物联网、C++ 工程和自主自托管 AI 架构方面的技术能力。",
+                hero_bio: '我是软件工程专业的学生，也是 <strong class="text-cyan-600 dark:text-cyan-400">Root Rob</strong> 的创始人。我的目标是将 Root Rob 发展成为全球标杆，同时通过免费的数字安全意识课程和创新自动化解决方案服务社区。我与全球公司紧密合作，并保持作为力量举运动员的严格自律。',
+                progress_title: "进行中的项目",
+                progress_sub: "活动学习路线和目标的实时状态",
+                completed_title: "已完成的课程与历史",
+                completed_sub: "完整验证的课程日志（100% 完成进度）",
+                projects_title: "特色项目与部署",
+                powerlifting_title: "力量举重数据",
+                powerlifting_sub: "当前验证记录与力量目标",
+                bench_press: "卧推 (Bench Press)",
+                deadlift: "硬拉 (Deadlift)",
+                squat: "深蹲 (Squat)"
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key]) {
+                    elem.innerHTML = i18n[lang][key];
+                }
+            });
+            document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        }
+    </script>
+</body>
+
+</html>
