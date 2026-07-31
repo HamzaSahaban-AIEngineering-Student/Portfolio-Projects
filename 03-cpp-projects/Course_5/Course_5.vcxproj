@@ -19,7 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Course5\Problem16_All_Words_FromAAAToZZZ.cpp" />
+    <ClCompile Include="..\Course5\Problem16_All_Words_FromAAAToZZZ.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\Course5\Problem17_Guess_AThree_Letter_Password.cpp" />
     <ClCompile Include="..\Course5\Problem18_EncryptDiscrypt_Text.cpp" />
     <ClCompile Include="..\Course5\Problem19_Random3_Numbers_FRom1To10.cpp" />
