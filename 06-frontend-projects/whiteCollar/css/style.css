@@ -1,0 +1,2412 @@
+:root{
+    --mainColor:  #252424;
+    --secondaryColor:  rgba(12, 205, 96, 0.879); 
+    --thirdColor: rgba(123, 117, 117, 0.2);
+    --fourthColor: #7c60ce;
+    --fivthColor: rgb(255, 255, 255);
+    --sixthColor: rgba(216, 211, 211, 0.754);
+    --7Color: rgba(64, 62, 62, 0.908);
+    --lastcolor: rgba(71, 157, 76, 0.832);
+    font-size: 100%;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;     font-weight: 400;
+    font-style: normal;
+}
+body::selection{
+    background-color: rgba(128, 128, 128, 0.239);
+}
+h2{
+    font-weight: 900;
+}
+/* header */
+.upper-div-header{ 
+    background-color: var(--mainColor); 
+}
+.upper-sec-header{
+     display:flex;
+      justify-content:space-between;
+       background-color: var(--mainColor); 
+    }
+.upper-sec-header p,i{
+     color: var(--sixthColor); 
+    }
+.icons-header i{ 
+    margin:0 1rem; 
+    color: var(--sixthColor)
+}
+.l-div-header,.r-div-header{
+    display:flex; 
+    flex-wrap:wrap;
+     justify-content:space-between;
+    padding:1rem 1rem;
+     margin:0 1rem; width:45%;
+}
+header .lower-div-header .lower-sec-header{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    padding:2rem 2.5rem;
+}
+.logo{ 
+    display:flex;
+     flex-wrap:wrap;
+      width:30%; 
+}
+.logo svg{
+     width:3rem;
+      height:2rem;
+       margin-top:0.5rem;
+}
+.logo h1{
+    color:var(--mainColor); 
+}
+.logo h1 span{
+    color:var(--fourthColor); 
+}
+header .lower-div-header .lower-sec-header nav{
+     width:60%; 
+}
+
+.menu-toggle{
+    display:none;                 
+    background:none;
+    border:none;
+    font-size:24px;
+    cursor:pointer;
+    z-index:1002;
+}
+.menu-toggle.close{
+    position:absolute;
+    top:0;
+    left:20px;
+    margin-bottom: 6rem;
+}
+.menu-toggle.close i{
+    color: var(--fivthColor);
+
+}
+
+header .lower-div-header .lower-sec-header nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-transform: capitalize;
+    list-style: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+header .lower-div-header .lower-sec-header nav ul li select{
+    border: none;
+    width: 1rem;
+}
+option{
+    color: var(--mainColor);
+}
+header .lower-div-header .lower-sec-header nav ul li a{
+    text-decoration: none;
+    color: var(--mainColor);
+    transition-duration: 0.5s;
+}
+header .lower-div-header .lower-sec-header nav ul li .active{
+       background-color: var(--sixthColor);
+    color: var(--mainColor);
+    padding: 1rem;
+ 
+}
+header .lower-div-header .lower-sec-header nav ul li a:hover{
+    background-color: var(--7Color);
+    color: var(--fivthColor);
+    padding: 1rem;
+}
+header .lower-div-header .lower-sec-header nav ul button{
+    padding: 0.5rem;
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+    border-radius: 1rem;
+    border: none;
+    transition-duration: 0.5s;
+}
+header .lower-div-header .lower-sec-header nav ul button:hover{
+    transform: scale(1.1);
+    border: 1px solid var(--mainColor);
+    background-color: rgba(0, 0, 0, 0.132);
+    color: var(--mainColor);
+}
+
+
+
+/* indix page */
+.hero-index{
+    background-image: url(../images/Image.png);
+    min-height: 80vh;
+    background-position: center;
+
+}
+.hero-index div{
+    background-color: rgba(37, 36, 36, 0.922);
+    height: 80vh;
+    width: 40%;
+    padding: 8rem 3rem;
+}
+.hero-index div p:first-child{
+    position: relative;
+    color: var(--fivthColor);
+}
+.hero-index div p:first-child::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 0.2rem;
+    left: -1.2rem;
+}
+.hero-index div h2{
+    font-size: 3rem;
+    color: var(--fivthColor);
+    text-transform: capitalize;
+}
+.hero-index div h2 span{
+    color: var(--secondaryColor);
+}
+.hero-index div h2 +p{
+    color: var(--fivthColor);
+}
+.hero-index div button{
+    padding: 0.5rem;
+    background-color: var(--secondaryColor);
+    transition-duration: 0.5s;
+    margin-right: 1rem;
+    border: none;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+.hero-index div button:hover{
+    background-color: inherit;
+    color: var(--fivthColor);
+    scale: 1.1;
+}
+.hero-index div button ~ a{
+    text-decoration: underline;
+    margin-left: 1rem;
+}
+.hero-index div span i{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    padding: 0.7rem 0.5rem 0.7rem 0.9rem;
+    background-color: var(--fourthColor);
+}
+
+
+
+/* second section in the index page */
+.Wilcome-index {
+    display: flex;
+    flex-wrap: wrap;
+}
+.l-div-wilcome{
+    background-color: rgba(0, 0, 0, 0.104);
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: end;
+}
+.l-div-wilcome div{
+    width: 70%;
+    padding: 6rem 2rem;
+    
+}
+.l-div-wilcome img{
+    width: 100%;
+}
+.l-div-wilcome div h2{
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+.l-div-wilcome div p{
+    color: rgba(0, 0, 0, 0.681);
+}
+.l-div-wilcome div a{
+    color:  rgba(0, 0, 0, 0.681);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.681);
+}
+.l-div-wilcome div a:hover{
+    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.491);
+    color: var(--fivthColor);
+}
+.r-div-welcome{
+    width: 60%;
+    padding: 6rem 3rem;
+    text-transform: capitalize;
+
+}
+.r-div-welcome div{
+    width: 80%;
+}
+.r-div-welcome div p:first-child{
+    position: relative;
+    margin-left: 1.5rem;
+}
+.r-div-welcome div p:first-child::before{
+    content: '';
+    height: 1rem;
+    width: 1rem;
+    background-color: var(--secondaryColor);
+    position: absolute;
+    top: 0.3rem;
+    left: -1.2rem; 
+}
+.r-div-welcome div h2{
+    font-size: 3rem;
+}
+.r-div-welcome .welcome-div-lower{
+    display: flex;
+    width: 100%;
+}
+.r-div-welcome .welcome-div-lower .border-div{
+    border: 2px solid rgba(0, 0, 0, 0.101);
+    width: 50%;
+    margin: 2rem 2rem 2rem 0;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+.r-div-welcome .welcome-div-lower div svg{
+    width: 30%;
+}
+.r-div-welcome .welcome-div-lower div .h4{
+    width: 70%;
+}
+.r-div-welcome .welcome-div-lower div .h4 p{
+    font-size: 1rem;
+    
+}
+.r-div-welcome .mainDiv-index-welcom button{
+    padding: 1rem;
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+    border: none;
+    transition-duration: 0.5s;
+}
+.r-div-welcome .mainDiv-index-welcom button:hover{
+    background-color: inherit;
+    border: 2px solid var(--mainColor);
+    color: var(--mainColor);
+    scale: 1.2;
+}
+
+
+/* third section in the index page */
+.experts{
+    padding: 2rem 0;
+    min-height: 110vh;
+    margin-bottom: 2rem;
+}
+.svgs{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+.upper-div-experts{
+    padding: 2rem 0;
+}
+.upper-div-experts p{
+    position: relative;
+    text-align: center;
+}
+.upper-div-experts p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.2rem;     
+}
+.upper-div-experts h2{
+    text-align: center;
+    font-size: 3rem;
+
+}
+.lower-div-experts{
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,9rem);
+    gap: 2rem 4rem;
+    width: 60%;
+    height: 40vh;
+}
+.lower-div-experts .card-div-index,button{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.131);    
+    padding: 1rem;
+    border-radius: 1rem;
+    transition-duration: 0.5s;
+
+}
+.lower-div-experts .card-div-index:hover,button:hover{
+    scale: 1.2;
+}
+.lower-div-experts .card-div-index p{
+    font-size: 1.5rem;
+}
+.lower-div-experts .card-div-index a{
+    color: var(--mainColor);
+}
+.lower-div-experts button{
+    width: 100%;
+    background-color: var(--fourthColor);
+    padding-top: 2.5rem;
+    padding-left: 1.5rem ;
+    color: var(--fivthColor);
+    font-size: 2rem;
+    height: 9rem;
+}
+
+
+
+/* The fourth section in the index page  */
+.WhyChoose{
+    display: flex;
+}
+.WhyChoose .l-div-why{
+    background-color:var(--mainColor);
+    width: 50% ;
+    padding: 5rem 1rem 5rem 13rem;
+}
+.WhyChoose .l-div-why p{
+    color: var(--fivthColor);
+}
+.WhyChoose .l-div-why p:first-child{
+    margin-left: 1.2rem;
+}
+.WhyChoose .l-div-why p:first-child::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.2rem;     
+    
+}
+.WhyChoose .l-div-why h2{
+    color: var(--fivthColor);
+}
+.r-div-why{
+    background-image: url(../images/Photo\ \(1\).png);
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 100vh;
+    width: 50%;
+}
+.card-why{
+    display: flex;
+    gap: 2rem;
+}
+.card-div-why{
+    display: flex;
+    gap: 2rem;
+    border: none;
+    background-color: rgba(113, 107, 107, 0.234);
+    padding: 0.5rem 1rem 0 1rem;
+    margin: 2rem 0;
+}
+.true-div-index{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+.true-div-index p span{
+    color: rgb(226, 179, 8);
+}
+.true-div-index a{
+    color: var(--secondaryColor);
+    text-decoration: underline;
+    
+}
+.true-div-index a:hover{
+    scale: 1.1;
+    color: var(--fivthColor);
+}
+
+
+
+/* The fifth section in the index page  */
+.upper-div-projects{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: space-between;
+    padding: 2rem 0;
+} 
+.upper-div-projects p{
+    margin-left: 1rem;
+}
+.upper-div-projects p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.2rem;     
+
+}
+.upper-div-projects div{
+    display: flex;
+    justify-content: space-between;
+}
+.upper-div-projects div button{
+    background-color: var(--secondaryColor);
+    color: var(--fivthColor);
+
+}
+.lower-div-projects{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem ;
+    gap: 1rem;
+}
+.lower-div-projects img{
+    width: 23%;    
+}
+.ourProjects hr{
+    width: 60%;
+    margin: auto;
+    height: 2px;
+    box-shadow: 0 1rem 10px 5px;
+    height: 5px;
+    background-color: rgb(150, 114, 114);
+}
+
+
+
+
+/* The sixth section in the index page */
+.testimonial-index{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    padding: 2rem;
+    margin: 4rem auto;
+}
+.testimonial-index .title-div-testimonial{
+    padding: 1rem;
+    padding-right:3rem ;
+}
+.testimonial-index .title-div-testimonial p:first-child{
+    margin-left: 1.3rem;
+    font-size: 1.2rem;
+}
+.testimonial-index .title-div-testimonial p:first-child::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.2rem;     
+
+}
+.testimonial-index .title-div-testimonial h2{
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+.card-div-testimonial{
+    border: none;
+    background-color: var(--thirdColor);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+
+
+
+.how-index{
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+}
+.how-index .container{
+    display: flex;
+}
+.how-index .l-div-how{
+    padding: 2rem;
+    
+}
+.how-index .l-div-how .how-p{
+    margin-left: 1.3rem;
+}
+.how-index .l-div-how .how-p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.2rem;     
+
+}
+.how-index .l-div-how h2{
+    font-size: 2.5rem;
+}
+.how-index .l-div-how h2 +p{
+    width: 80%;
+}
+.how-index .l-div-how .card-div-how{
+    display: flex;
+    padding: 2rem 1rem;
+    width: 80%;
+    gap: 2rem;
+    background-color:var(--secondaryColor);
+    border: none;
+    border-radius: 1rem;
+}
+.how-index .l-div-how .card-div-how div{
+    width: 90px;
+    height: 90px;
+    border-radius:50% ;
+    background-color: transparent;
+    padding: 1rem;
+    border: 5px solid var(--fourthColor);
+}
+.how-index .l-div-how .card-div-how div + p{ 
+    margin: 1rem 2rem 0 0;
+}
+.how-index .l-div-how .card-div-how div + p span{
+    font-size: 1.3rem;
+    
+    
+}
+.true-div-how{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    margin: 1rem 0 0 0;
+    width: 80%;
+}
+.r-div-how{
+    padding: 2rem;
+}
+.r-div-how p:first-child{
+    margin-left: 1.3rem;
+}
+.r-div-how p:first-child::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.2rem;     
+
+}
+.r-div-how form{
+    background-color: var(--fivthColor);
+    width: 80%;
+    padding: 1rem 1rem;
+    border-radius: 1rem ;
+    margin-top: 5rem;
+
+}   
+.r-div-how form input,textarea{
+    width: 100%;
+    padding-left: 1rem;
+    margin: 1rem 0;
+    outline: none;
+    background-color: rgba(128, 128, 128, 0.212);
+}
+.r-div-how form textarea{
+    height: 8rem;
+}
+.r-div-how form input:focus,textarea:focus{
+    border:2px solid var(--fourthColor);
+
+}
+.r-div-how form input{
+height: 3rem;
+}
+.r-div-how form button{
+    background-color: var(--secondaryColor);
+    width: 8rem;
+    padding: 1rem 1.5rem;
+    color: var(--fivthColor);
+    font-size: 1.5rem;
+    transition-duration: 0.5s;
+}
+.r-div-how form button:hover{
+    scale: 1.2;
+    background-color: transparent;
+    color: var(--mainColor);
+}
+
+
+
+/* The seventh section in the index page */
+.our-team-index{
+    background-image: url(../images/Photo\ \(3\).png);
+    min-height: 100vh;
+    background-position: center top;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.our-team-index div{
+    background-color:var(--7Color);
+    color: var(--fivthColor);
+    height: 6rem;
+    width: 15rem;
+    scale: 1.5;
+    text-align: center;
+    padding-top: 2.2rem;
+    transition-duration: 0.5s;
+}
+.our-team-index div:hover{
+    scale: 1.5;
+    scale: 2;
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.505);
+    color: var(--mainColor);
+
+}
+
+
+/* The eighth section in the index page */
+.recent-news .container{
+    display: flex;
+    flex-direction: column;
+}
+.recent-news .upper-div-news{
+    display: flex;
+    justify-content: space-between;
+}
+.recent-news .upper-div-news p{
+    margin-left: 1.3rem;
+}
+.recent-news .upper-div-news p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.2rem;     
+}
+.recent-news .upper-div-news button{
+    background-color: var(--mainColor);
+    color: var(--fivthColor);
+    padding: 1rem ;
+    border-radius: 0;
+    margin-top: 1rem ;
+}
+.lower-div-news{
+    display: flex;
+    gap: 2rem;
+}
+.l-div-news,.r-div-news{
+    padding:2rem ;
+}
+ .div-p-index{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-bottom: 2rem;
+}
+.div-p-index p{
+    background-color: var(--secondaryColor);
+    text-align: center;
+    padding: 1rem;
+}
+ .div-p-index p:first-child{
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+    border-right: 2px solid var(--mainColor);
+    
+}
+ .div-p-index p:nth-child(2){
+    border-right: 2px solid var(--mainColor);
+}
+ .div-p-index p svg,i{
+    color: var(--mainColor);
+}
+.lower-div-news a{
+    color: var(--mainColor);
+}
+.lower-div-news a:hover{
+    background-color: var(--7Color);
+    color: var(--fivthColor);
+    scale: 1.2;
+    padding: 0.5rem;
+}
+
+
+
+.lastSection-index .main-div-last{
+    background-image: url(../images/Photo\ \(4\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(0);
+    height: 60vh;
+    width: 80%;
+    margin: auto;
+}
+.lastSection-index .main-div-last .green-div{
+    background-color: var(--lastcolor);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 3rem ;
+}
+.lastSection-index .main-div-last .green-div p:first-child::before{
+    content:'';
+    background-color: var(--fourthColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.2rem;     
+
+}
+.lastSection-index .main-div-last .green-div h2 span{
+    color: var(--fivthColor);
+}
+.lastSection-index .main-div-last .green-div .big-p{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+ .green-div a button{
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+    margin: 1rem auto;    
+}
+
+
+
+/* About page */
+
+/* the First section in about page */
+.about-wilcome .welcome-div-lower{
+    display: grid;
+    grid-template-columns: 1;
+    padding: 1rem 2rem;
+    gap: 1rem;
+}
+.about-wilcome .welcome-div-lower .border-div-about{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+
+}
+.about-wilcome .welcome-div-lower .border-div-about svg{
+    
+    width: 2rem;
+}
+.about-wilcome .welcome-div-lower .border-div-about span{
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 0.3rem;
+}
+.about-wilcome .welcome-div-lower .border-div-about p{
+    margin: 0 2rem;
+}
+
+/* The second section in about page */
+.work-process .container{
+    width: 70%;
+     margin: auto;
+}
+.work-process .container .upper-div-process{
+    text-align: center;
+}
+.work-process .container .upper-div-process p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.2rem;     
+}
+.work-process .container .lower-div-process{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    
+}
+.work-process .container .lower-div-process div{
+    border: none;
+    background-color: var(--sixthColor);
+    border-radius: 1rem;
+    padding: 4rem 1rem;
+    text-align: center;
+    position: relative;
+    margin-top: 3rem;
+    transition-duration: 0.5s;
+}
+.work-process .container .lower-div-process div img{
+    margin-bottom: 2rem;
+    position: absolute;
+    top: -2.3rem;
+    left: 40%;
+}
+.work-process .container .lower-div-process div:hover{
+    scale: 1.2;
+}
+.work-process .container .lower-div-process div a{
+    color: var(--fourthColor);
+}
+
+
+
+/* The third section in about page  */
+.expertIn-about{
+    background-color: var(--sixthColor);
+    margin-top: 2rem ;
+}
+.expertIn-about .container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+    padding: 2rem;
+}
+.expertIn-about .container div{
+    text-align: center;
+}
+.expertIn-about .container .x{
+    border-right: 2px solid var(--sixthColor);
+}
+
+
+
+
+/* The fourth section in about page */
+.presentation-about{
+    background-color: var(--secondaryColor);
+    background-image: url(../images/Photo\ \(12\).png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.presentation-about div{
+    width: 100%;
+    background-color: rgba(12, 205, 96, 0.764);
+    text-align: center;
+    padding: 2rem 0;
+
+}
+.presentation-about div p:first-child::before{
+    content:'';
+    background-color: var(--fourthColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.2rem;     
+
+}
+.p-about{
+    width: 30%;
+    margin:1rem  auto;
+    
+}
+
+/* The last section in about page */
+.team-about{
+    margin: 2rem 0 7rem 0;
+}
+.team-about .upper-div-team{
+    text-align: center;
+}
+.team-about .upper-div-team p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.2rem;     
+
+}
+.team-about .lower-div-team{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 70%;
+    margin: auto;
+    gap: 1rem;
+}
+.team{
+    height: 65vh;
+}
+.card-team1{
+    background-image: url(../images/Photo\ \(6\).png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+}
+.main-div-card1{
+    background-color: rgba(100, 71, 157, 0.635);
+    height: 100%;
+    padding: 2rem;
+    position: relative;
+}
+.icons-div{
+    text-align: center;
+    margin: 12rem 0 4rem 0;
+}
+.icons-div i{
+    background-color: var(--secondaryColor);
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin: 0 0.3rem;
+}
+.name-div{
+    background-color: var(--fivthColor);
+    text-align: center;
+    padding: 1rem 0;
+}
+.card-team2{
+    background-image: url(../images/Photo\ \(7\).png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    padding: 2rem;
+    position: relative;
+    
+}
+.card-team3{
+    background-image: url(../images/Photo\ \(8\).png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    padding: 2rem; 
+    position: relative;   
+}
+.name-div{
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    left: 2rem;
+}
+
+
+
+
+/* Contact page */
+/* The First section in contact page */
+.hero-contact{
+    background-image: url(../images/Photo\ \(31\).png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.hero-contact .hero-contact-div{
+    background-color: #252424f0;
+    width: 40%;
+    height: 40vh;
+    padding: 3rem 1rem 1rem 7rem;
+    color: var(--fivthColor);
+}
+.hero-contact .hero-contact-div p{
+    margin-left: 1.3rem;
+}
+.hero-contact .hero-contact-div p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -1.2rem;     
+
+}
+.hero-contact .hero-contact-div h2{
+    font-size: 3rem;
+}
+
+
+
+
+/* The second section in contact page */
+.getinTouch .container{
+    display: flex;
+    gap: 1rem;
+}
+.getinTouch .container .l-div-contact{
+    width: 60%;
+    margin-top: 3rem;
+}
+.getinTouch .container .l-div-contact img{
+    width: 100%;
+    height: 70vh;
+}
+.getinTouch .container .r-div-contact{
+    padding: 3rem;
+}
+.getinTouch .container .r-div-contact .f-p{
+    margin-left: 1.3rem;
+    font-size: 1.3rem;
+}
+.getinTouch .container .r-div-contact .f-p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+
+}
+.getinTouch .container .r-div-contact h2{
+    font-size: 2.5rem;
+}
+.card-div-touch{
+    display: flex;
+    padding: 2rem 0 0 2rem;
+}
+.card-div-touch i{
+    background-color: var(--sixthColor);
+    border-radius: 50%;
+    width: 4rem ;
+    height: 4rem;
+    text-align: center;
+    padding-top: 1.3rem;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+}
+.card-div-touch p{
+    font-size: 1.2rem;
+}
+.card-div-touch p:first-child{
+    color: var(--7Color);
+}
+.card-div-touch p:nth-child(2){
+    color: var(--mainColor);
+    font-weight: bold;
+}
+
+
+
+
+/* The last section in contact page */
+.form-contact .container{
+    text-align: center;
+}
+.form-contact .container .upper-div-contact p{
+    font-size: 1.2rem;
+}
+.form-contact .container .upper-div-contact p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+
+}
+.form-contact .container .lower-div-contact{
+    margin-top: 3rem;
+}
+.form-contact .container .lower-div-contact form{
+    width: 60%;
+    margin: auto;
+    padding: 2rem;
+}
+.form-contact .container .lower-div-contact form .inputsDiv{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+.form-contact .container .lower-div-contact form textarea{
+    height: 7rem;
+}
+.form-contact .container .lower-div-contact form  input{
+    height: 1rem;
+    padding: 2rem;
+}
+.form-contact .container .lower-div-contact form textarea,input{
+    background-color: var(--sixthColor);
+    outline: none;
+    border: none;
+    transition-duration: 0.5s;
+}
+.form-contact .container .lower-div-contact form textarea:focus,input:focus{
+    scale: 1.1;
+}
+.form-contact .container .lower-div-contact form button{
+    margin: auto;
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+}
+
+
+
+
+/* blog page */
+/* the first section in blog page */
+.hero-blog{
+    background-image: url(../images/Photo\ \(17\).png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.hero-blog .hero-blog-div{
+    background-color: #252424f0;
+    width: 40%;
+    height: 40vh;
+    padding: 3rem 1rem 1rem 7rem;
+    color: var(--fivthColor);
+}
+.hero-blog .hero-blog-div p{
+    margin-left: 1.3rem;
+}
+.hero-blog .hero-blog-div p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+    
+}
+.hero-blog .hero-blog-div h2{
+    font-size: 3rem;
+}
+
+
+
+/* The second section in blog page */
+.upperDivNews{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.upperDivNews p{
+    font-size: 1.3rem;
+}
+.upperDivNews p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+}
+.lowerDivNews{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3rem;
+}
+.lowerDivNews img{
+    width: 100%;
+}
+.lowerDivNews .cardBlog{
+    width: 100%;
+}
+.cardBlog a{
+    color: var(--fourthColor);
+    text-decoration: underline;
+    font-size: 1.5rem;
+    transition-duration: 0.5s;
+}
+.cardBlog a:hover{
+    background-color: var(--mainColor);
+    color: var(--fivthColor);
+    padding: 1rem;
+    text-decoration: none;
+}
+.resentNewsBlog button{
+    margin: 2rem auto;
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+}
+
+
+/* Changelog page */
+.hero-changelog{
+    text-align: center;
+    height: 50vh;
+    padding-top: 4rem;
+}
+.hero-changelog p:first-child{
+    font-size: 1.3rem;
+}
+.hero-changelog p:first-child::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+
+}
+
+/* Password page */
+.passSection{
+    text-align: center;
+}
+.meinPass{
+    background-color: var(--sixthColor);
+    width: 40%;
+    margin: 2rem auto;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+.meinPass p{
+    font-size: 1.3rem;
+}
+.meinPass p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+
+}
+.meinPass form input{
+    background-color: #fff;
+    padding: 1rem;
+    width: 80%;
+    margin: 1rem 0;
+}
+.meinPass form button{
+    margin: auto;
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+}
+
+
+/* Team page */
+.hero-team{
+    background-image: url(../images/Photo\ \(25\).png);
+    background-position: center top;
+}
+ .hero-team-div{
+    background-color: #252424f0;
+    width: 40%;
+    height: 40vh;
+    padding: 3rem 1rem 1rem 7rem;
+    color: var(--fivthColor);
+}
+ .hero-team-div p{
+    font-size: 1.3rem;
+    margin-left: 1.3rem;
+ } 
+ .hero-team-div p::before{
+     content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+   
+ }
+
+
+
+/* The second section in team page */
+.ourTeam{
+    width: 70%;
+    margin: 5rem auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+.ourTeam .team{
+    transition-duration: 0.5s;
+}
+.ourTeam .team:hover{
+    scale: 1.2;
+}
+.ph29{
+    background-image: url(../images/Photo\ \(29\).png);
+}
+.ph30{
+    background-image: url(../images/Photo\ \(30\).png);
+}
+.ph{
+    background-image: url(../images/Photo.jpg);
+}
+.team-r{
+    background-image: url(../images/Photo.png);
+    background-position: center;
+    background-size: cover;
+    
+}
+
+
+
+/* The third section in team page */
+.Team-sec{
+    height: 80vh;
+    margin: 3rem 0;
+}
+.Team-sec .container{
+     display: flex;
+     height: 100%;
+
+}
+.Team-sec .container .l-div-sec{
+    background-color: #303030;
+    padding: 3rem 2rem;
+    color: var(--fivthColor);
+    width: 50%;
+}
+.Team-sec .container .l-div-sec p:first-child{
+    margin-left: 1.3rem;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+.Team-sec .container .l-div-sec p:first-child::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+}
+.Team-sec .container .l-div-sec p:first-child + h2{
+    margin-bottom: 2rem;
+}
+.Team-sec .container .l-div-sec p:first-child ~ p{
+    margin-bottom: 3rem;
+}
+.team-s{
+    display: flex;
+    gap: 2rem;
+}
+.l-div-team-s{
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+    border: 0.3rem solid var(--secondaryColor);
+    padding: 1.6rem 0.3rem ;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.r-div-team-s h4{
+    font-size: 2rem;
+}
+.r-div-team-s h4 + p{
+    font-size: 1.5rem;
+}
+.r-div-sec{
+    width: 50%;
+    background-image: url(../images/Photo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+/* Projects page */
+.hero-projects{
+    background-image: url(../images/Photo\ \(12\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+}
+.hero-projects .hero-blog-div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+
+
+/* The second section in projects page */
+
+.latest-projects{
+    margin: 3rem 0;
+}
+.latest-projects .container{
+    margin: auto;
+}
+.latest-projects .upperDiv-project{
+    text-align: center;
+}
+.latest-projects .upperDiv-project p:first-child{
+    font-size: 1.3rem;
+    
+}
+.latest-projects .upperDiv-project p:first-child:before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+
+}
+.latest-projects .upperDiv-project h2 +p{
+    width: 40%;
+    margin: 2rem auto;
+    
+}
+ .lowerDiv-project{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    width: 90%;
+    padding: 1rem;
+    margin: auto;
+    
+}
+ .lowerDiv-project .card-div-pro{
+   padding: 1rem;
+   text-align: center;
+} 
+
+
+ .lowerDiv-project .card-div-pro img{
+    width: 95%;
+    height: 23rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    transition-duration: 0.5s;
+}
+ .lowerDiv-project .card-div-pro img:hover{
+    scale: 1.2;
+    margin-bottom: 3rem;
+}
+ .lowerDiv-project .card-div-pro button{
+    margin: 1rem auto;
+    border-radius: 50%;
+    background-color: var(--sixthColor);
+    border: none;
+}
+.div-pro{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    
+}
+
+
+
+/* Error page */
+.error{
+    background-image: url(../images/Photo-eror.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+}
+.error .errorDiv{
+    background-color: var(--7Color);
+    height: 100%;
+    text-align: center;
+    color: var(--fivthColor);
+}
+.error .errorDiv h2{
+    font-size: 15rem;
+}
+.error .errorDiv h3{
+    font-size: 5rem;
+}
+.error .errorDiv h3+p{
+    width: 50%;
+    margin: auto;
+}
+.error .errorDiv button{
+    margin: 2rem auto;
+    background-color: var(--secondaryColor);
+    color: var(--mainColor);
+}
+
+
+/* Price packs page */
+.hero-prise{
+    background-image: url(../images/Photo\ \(11\).png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+}
+.hero-prise div{
+    width: 40%;
+    height: 100%;
+    background-color: var(--7Color);
+    color: var(--fivthColor);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero-prise div p{
+    margin-left: 1.3rem;
+    font-size: 1.3rem;
+}
+.hero-prise div p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+    
+}
+.hero-prise div h2{
+    font-size: 3.5rem;
+}
+
+
+
+/* Price page */
+.upperDivPrice{
+    text-align: center;
+    margin: 3rem;
+}
+.upperDivPrice h2{
+    width: 40%;
+    margin: auto;
+}
+.lowerDivPrice{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 4rem;
+    width: 70%;
+    margin: auto;
+    padding: 5rem 0;
+    
+}
+.lowerDivPrice .edge{
+    background-color: var(--sixthColor);
+    padding: 2rem;
+    text-align: center;
+    
+}
+.lowerDivPrice .edge h3 + p{
+    background-color: var(--secondaryColor);
+    height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.lowerDivPrice .edge button{
+    margin: auto; 
+    border-radius: 0;
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+}
+.lowerDivPrice .edge button:hover{
+    scale: 1.2;
+}
+.edge1{
+    height: 96%;
+}
+.middle{
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+    text-align: center;
+    scale: 1.2;
+}
+.middle div{
+    padding:  2rem;
+}
+.middle button{
+    margin: auto;
+    background-color: var(--fivthColor);
+    color: var(--mainColor);
+    border-radius: 0;
+}
+.middle h3 + p{
+    background-color: var(--fivthColor);
+    color: var(--fourthColor);
+    height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.popular{
+    background-color: var(--secondaryColor);
+    padding: 1rem 0;
+}
+
+
+/* License page */
+.upperDivLicense{
+    text-align: center;
+}
+.upperDivLicense p{
+    font-size: 1.3rem;
+}
+.upperDivLicense p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+}
+.upperDivLicense p+h2{
+    font-size: 3rem;
+}
+.hero-license .container{
+    padding: 2rem 8rem 2rem 5rem;
+    
+}
+.hero-license .container h3{
+    font-size: 2rem;
+}
+.hero-license .container h4{
+    font-size: 1.3rem;
+}
+.hero-license .container span{
+    color: var(--secondaryColor);
+}
+.hero-license .container div{
+    margin-bottom: 5rem;
+}
+
+
+/* Blog Single page */
+.mainDivBloh{
+    background-image: url(../images/Photo\ \(22\).png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mainDivBloh .div-p-index{
+    width: 40%;
+    position: absolute;
+    bottom: -3rem;
+    left: 0;
+
+}
+.mainDivBloh{
+    position: relative;
+    height: 100vh;
+}
+.coloredSection .upperDivColor{
+    position: relative;
+    background-color: var(--secondaryColor);
+    padding: 5rem 10rem 3rem 10rem;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 3rem 0;
+}
+.coloredSection .upperDivColor::before{
+    content:'';
+    background-color: var(--fourthColor);
+    width: 100%;
+    height: 1.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+.relatedNews .upperDivRelat{
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 0;
+
+}
+.relatedNews .upperDivRelat button{
+    background-color: var(--mainColor);
+    color: var(--fivthColor);
+}
+.relatedNews .upperDivRelat button:hover{
+    color: var(--mainColor);
+    background-color: var(--fivthColor);
+}
+.relatedNews .lowerDivRelat{
+    display: flex;
+    gap: 2rem;
+}
+.relatedNews .lowerDivRelat .cardBlog{
+    padding: 3rem;
+    margin: 3rem 0;
+}
+.relatedNews .lowerDivRelat .cardBlog img{
+    width: 100%;
+    height: 60vh;
+}
+
+
+/* projects single page */
+.hero-projectsin{
+    background-image: url(../images/Photo\ \(15\).png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 40vh;
+    margin-bottom: 2rem;
+}
+.hero-projectsin .hero-single-div{
+    background-color: var(--7Color);
+    width: 40%;
+    height: 100%;
+    color: var(--fivthColor);
+    padding: 4rem;
+}
+.infoDivPro{
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.infoDivPro .l-div-info{
+    width: 70%;
+    padding: 2rem;
+    background-color: var(--thirdColor);
+    position: relative;
+    height: 60vh;
+    margin-left: 6rem;
+}
+.infoDivPro .l-div-info p:first-child{
+    background-color: var(--secondaryColor);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    text-align: center;
+    padding: 0.6rem;
+    font-size: 1.5rem;
+    color: var(--fivthColor);
+}
+.infoDivPro .r-div-info{
+    padding: 0 10rem 0 0;
+}
+.infoDivPro .r-div-info h2{
+    font-size: 2.5rem;
+}
+.upperDiv-prokects{
+    text-align: center;
+    margin: 2rem 0;
+}
+
+/* Faq page */
+
+.hero-faq{
+    background-image: url(../images/Photo\ \(33\).png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+}
+.hero-faq .hero-faq-div{
+    background-color: var(--7Color);
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--fivthColor);
+}
+.hero-faq .hero-faq-div p{
+    font-size: 1.3rem;
+}
+.hero-faq .hero-faq-div p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+    
+}
+.category{
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+.category .l-div-categoy{
+    width: 30%;
+    background-color: var(--sixthColor);
+    height: 100%;
+    padding: 2rem 1rem;
+}
+.category .l-div-categoy h3+p{
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+
+}
+.category .l-div-categoy p{
+    line-height: 2rem;
+    text-align: center;
+    height: 3rem;
+    transition-duration: 0.5s;
+}
+.category .l-div-categoy p:hover{
+    scale: 1.2;
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+}
+
+.faq {
+    width: 75%;
+}
+.faq-item {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.faq-question {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    border: none;
+    background: #f9f9f9;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-question span {
+    transition: transform 0.3s ease;
+}
+.faq-question.active span {
+    transform: rotate(180deg);
+}
+.faq-answer {
+    padding: 15px;
+    display: none;
+}
+
+
+
+
+/* srvices single */
+.hero-services-single{
+    background-image: url(../images/Image.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 40vh;
+    margin-bottom: 3rem;
+}
+.div-single-serv{
+    height: 100%;
+    width: 40%;
+    background-color: var(--7Color);
+    padding: 3rem 5rem;
+    color: var(--fivthColor);
+}
+.div-single-serv p{
+    margin-left: 1.3rem;
+    font-size: 1.3rem;
+}
+.div-single-serv p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+
+}
+.div-single-serv h2{
+    font-size: 2.5rem;
+}
+
+
+
+
+/* Services page */
+.hero-services{
+    background-image: url(../images/Photo\ \(9\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 50vh;
+}
+.hero-services .OurServisec{
+    background-color: var(--7Color);
+    width: 40%;
+    height: 100%;
+    color: var(--fivthColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+}
+.hero-services .OurServisec h2{
+    font-size: 2.5rem;
+}
+.our-services-2 .upperDivServices{
+    text-align: center;
+    margin: 2rem 0;
+}
+.our-services-2 .upperDivServices p{
+    margin-left: 1.3rem;
+    font-size: 1.3rem;
+}
+.our-services-2 .upperDivServices p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+}
+.our-services-2 .lowerDivServices{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+.our-services-2 .lowerDivServices .cardServices{
+    border: none;
+    background-color: var(--thirdColor);
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    transition-duration: 0.56s;
+    transition-timing-function: ease-in;
+
+}
+.our-services-2 .lowerDivServices .cardServices:hover{
+    scale: 1.2;
+}
+.our-services-2 .lowerDivServices .cardServices a{
+    color: var(--mainColor);
+    transition-duration: 0.5s;
+}
+.our-services-2 .lowerDivServices .cardServices a:hover{
+    background-color: var(--mainColor);
+    color: var(--fivthColor);
+    padding: 1rem;
+}
+
+
+
+/* the third section in services page */
+.offeringSec{
+    background-color: var(--mainColor);
+    color: var(--fivthColor);
+}
+.offeringSec .upperDivOffer{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+}
+.offeringSec .upperDivOffer .pOffer{
+    font-size: 1.3rem;
+    margin-left: 1.3rem;
+}
+.offeringSec .upperDivOffer .pOffer::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+}
+.lowerDivOffer{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 2rem;
+    gap: 2rem;
+}
+.lowerDivOffer div{
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.389);
+    padding: 2rem;
+    text-align: center;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+.lowerDivOffer div:first-child{
+    background-color: var(--fourthColor);
+    border: none;
+}
+.lowerDivOffer div:hover{
+    scale: 1.2;
+
+}
+.lowerDivOffer div svg,h3,p{
+    margin: 1rem 0;
+}
+.upperDivChServ p{
+    margin-left: 1.3rem;
+    font-size: 1.3rem;
+}
+.upperDivChServ p::before{
+    content:'';
+    background-color: var(--secondaryColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+
+}
+.lowerDivChServ{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-right: 5rem;
+}
+.l-divChServ{
+    width: 50%;
+    margin: 1rem 0;
+}
+.mainDivCh{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    width: 100%;
+    margin: 2rem 0;
+}
+.lowerDivChServ .cardDivChServ{
+    display: flex;
+    gap: 1rem;
+}
+.chartDiv{
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 1rem ;
+    width: 70%;
+    background-color: var(--thirdColor);
+    transition-duration: 0.5s;
+}
+.chartDiv:hover{
+    scale: 1.2;
+}
+.chartDiv svg{
+    margin: 2rem 0;
+}
+
+
+
+
+/* Services single page */
+.hero-servicesSingle{
+    background-image: url(../images/Image.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.hero-servicesSingle .management-service{
+    width: 50%;
+    background-color: var(--thirdColor);
+}
+.secondServSing{
+    display: flex;
+    gap: 4rem;
+}
+.l-div-servsing{
+    width: 50%;
+}
+.r-div-servsing{
+    width: 50%;
+}
+.card-div-servsing{
+    background-color: var(--sixthColor);
+    padding: 3rem 2rem;
+    width: 80%;
+    margin-bottom: 3rem ;
+}
+.card-div-servsing .itemDivServSing{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    transition-duration: 0.5s;
+}
+.card-div-servsing .item1{
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+}
+.card-div-servsing .itemDivServSing:hover{
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+    scale: 1.1;
+    cursor: pointer;
+} 
+.card-div-servsing button{
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+    margin: 1rem 0;
+    border: none;
+    border-radius: 0;
+    width: 50%;
+}
+.lastDivInserv{
+    background-image: url(../images/image\ 121.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80%;
+}
+.lastDivInserv div{
+    background-color: var(--secondaryColor);
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+    text-align: center;
+}
+.lastDivInserv div p:first-child{
+    margin-left: 1.3rem;
+    font-size: 1.3rem;
+}
+.lastDivInserv div p:first-child::before{
+    content:'';
+    background-color: var(--fourthColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;     
+}
+.lastDivInserv div span{
+    color: var(--fivthColor);
+}
+.lastDivInserv div button{
+    margin: auto;
+    background-color: var(--fourthColor);
+    color: var(--fivthColor);
+}
+.firstDivSrvSin img{
+    max-width: 98%;
+}
+.firstDivSrvSin h5{
+    color: var(--fourthColor);
+}
+.secDivSrvSin{
+    display: flex;
+    gap: 1rem;   
+}
+.secDivSrvSin h5{
+    margin: 1rem 0;
+    color: var(--fourthColor);
+}
+.lstDivSrvSin div{
+    border: 1px solid var(--7Color);
+    border-radius: 1rem;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.lstDivSrvSin div button{
+    background-color: inherit;
+    border: none;
+    font-size: 2.5rem;
+}
+
+
+
+/* footer */
+footer{
+    background-color: var(--mainColor);
+    margin-top: 1rem;
+}
+.upper-div-foot{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 3rem;
+}
+footer .logo h1{
+    color: var(--fivthColor);
+}
+footer p{
+    color: var(--fivthColor);
+}
+.r-div-upper-foot{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+}
+.footerDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footerDiv i{
+    background-color: rgba(72, 69, 69, 0.122);
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    text-align: center;
+    padding: 1.1rem 1rem;
+    color: var(--secondaryColor);
+    font-size: 2rem;
+    margin-right: 2rem;
+}
+.footerDiv p,a{
+    text-decoration: none;
+    color: var(--fivthColor);
+}
+footer hr{
+    color: var(--fivthColor);
+}
+.midle-div-foot{
+    display: flex;
+    flex-wrap: wrap;
+}
+.l-div-midle-foot{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 5rem;
+}
+.r-div-midle-foot{
+    width: 30%;
+}
+.first-p{
+    position: relative;
+    color: var(--secondaryColor);
+    padding-left: 0.5rem;
+}
+.first-p::before{
+    content:'';
+    background-color: var(--fourthColor);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 0.2rem;
+    left: -1.2rem;
+    
+}
+.r-div-midle-foot{
+    border: none;
+    background-color: rgba(133, 126, 126, 0.284);
+    height: 11rem;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+.email{
+    display: flex;
+}
+.r-div-midle-foot input{
+    height: 3rem;
+    padding:1rem 2rem ;
+    width: 13rem;
+    outline: none;
+}
+.r-div-midle-foot button{
+    background-color: var(--fourthColor);
+    height: 3rem;
+    border: none;
+    color: var(--fivthColor);
+    padding: 0.5rem;
+    transition-duration: 0.5s;
+    border-radius: 0;  
+}
+.r-div-midle-foot button:hover{
+    background-color: inherit;
+    color: var(--fivthColor);
+    border: 1px solid var(--fivthColor);
+    scale: 1.1;
+}
+.lower-div-foot{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    padding: 2rem 0;
+}
+.lower-div-foot .r-div-lower-foot{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 10%;
+    color: var(--fivthColor);
+}
+.lower-div-foot .l-div-lower-foot p span:first-child{
+    color: var(--secondaryColor);
+}
+.lower-div-foot .l-div-lower-foot p span:nth-child(2){
+    color: var(--fourthColor);
+}
+.r-div-lower-foot i{
+    color: var(--fivthColor);
+}
+
+@media screen and (max-width:1023px) {
+    .upper-div-foot{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    text-align: center;
+    }
+    
+    footer .logo{
+        margin: auto;
+    }
+    .r-div-upper-foot{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+        margin: auto;
+    }
+    .midle-div-foot{
+        display: flex;
+        flex-direction: column;
+    } 
+    .midle-div-foot .l-div-midle-foot{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+    .r-div-midle-foot{
+        width: 50%;
+        margin: auto;
+    }
+    .r-div-midle-foot button{
+        margin: 0;
+    }
+}
+
+
+
+
+
+/* all pages */
+.container{
+    padding: 2rem 0;  
+    margin: auto;  
+}
+

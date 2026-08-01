@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>FBC-اضافة عقار جديد</title>
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-head">
+        <div class="container">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <img src="images/222.jpg" alt="حمزة شعبان">
+                </div>
+                <div class="user-details">
+                    <p class="user-name">حمزة شعبان</p>
+                    <p class="user-role">مدير الشركة</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">عن الشركة</a></li>
+                    <li><a href="properties-list.html">قائمة العقارات</a></li>
+                    <li><a href="#" class="active">إضافة عقار جديد</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                    <li><a href="login.html">تسجيل الدخول</a></li>
+                </ul>
+            </nav>
+            <div class="logo">
+                <h1><a href="index.html">FBC</a></h1>
+                <span>Future Bridge Company</span>
+            </div>
+        </div>
+    </header>
+    <main class="main-form">
+        <div class="container">
+            <div class="form-tabs">
+                <button class="tab-button"><a href="property-form1.html">بيانات أساسية</a></button>
+                <button class="tab-button"><a href="property-form2.html">الموقع و المساحة</a></button>
+                <button class="tab-button"><a href="property-form3.html">المميزات و الخدمات</a></button>
+                <button class="tab-button active"><a href="#">التسعير و الشروط</a></button>
+            </div>
+            <div>
+                <form>
+                    <div class="section-icon">
+                        <h2>التسعير و الشروط</h2>
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <hr>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="choose">السعر المطلوب</label>
+                            <input type="number" id="choose" placeholder="السعر المطلوب" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="choose">نوع العرض</label>
+                            <select name="" id="choose" required>
+                                <option>اختر نوع العرض</option>
+                                <option>للبيع</option>
+                                <option>للإيجار</option>
+                                <option>للبيع و الإيجار</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="choose">طريقة الدفع المفضمة؟</label>
+                            <select name="" id="choose" required>
+                                <option>اختر طريقة الدفع ...</option>
+                                <option>نقدا</option>
+                                <option>تقسيط</option>
+                                <option>نقدا و تقسيط</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">مدة الإيجار (ان وجد)</label>
+                            <select name="" id="choose" required>
+                                <option>اختر مدة الإيجار</option>
+                                <option>شهريا</option>
+                                <option>سنويا</option>
+                                <option>عدة سنوات</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">ملاحظات إضافية..</label>
+                            <textarea id="comment" rows="4" placeholder="ملاحظات إضافية"></textarea> 
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit">حفظ بيانات العقار</button>
+                    </div>
+
+                </form>
+            </div>
+
+
+
+        </div>
+    </main>
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="main-foot">
+        <div class="container">
+            <div class="foot-top">
+                <div class="foot-right">
+                    <p>تابعنا على مواقع التواصل</p>
+                    <a href="https:/www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https:/www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https:/www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https:/www.snapchat.com"><i class="fa-brands fa-snapchat"></i></a>
+                    <a href="https:/www.tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+
+                <div class="foot-left">
+                    <h1>FBC</h1>
+                    <span>Future Bridge Company</span>
+                </div>
+            </div>
+
+            <hr>
+            <div class="foot-bottom">
+                <div class="right-bottom-foot">
+                    <p>جميع الحقوق محفوظة &copy;</p>
+                </div>
+                <div class="left-bottom-foot">
+                    <p>الخصوصية و شروط الاستخدام</p>
+                </div>
+            </div>
+        </div>        
+    </footer>
+
+
+
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+    
+</body>
+</html>

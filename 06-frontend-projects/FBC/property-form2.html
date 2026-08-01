@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>FBC-اضافة عقار جديد</title>
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-head">
+        <div class="container">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <img src="images/222.jpg" alt="حمزة شعبان">
+                </div>
+                <div class="user-details">
+                    <p class="user-name">حمزة شعبان</p>
+                    <p class="user-role">مدير الشركة</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">عن الشركة</a></li>
+                    <li><a href="properties-list.html">قائمة العقارات</a></li>
+                    <li><a href="#" class="active">إضافة عقار جديد</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                    <li><a href="login.html">تسجيل الدخول</a></li>
+                </ul>
+            </nav>
+            <div class="logo">
+                <h1><a href="index.html">FBC</a></h1>
+                <span>Future Bridge Company</span>
+            </div>
+        </div>
+    </header>
+    <main class="main-form">
+        <div class="container">
+            <div class="form-tabs">
+                <button class="tab-button"><a href="property-form1.html">بيانات أساسية</a></button>
+                <button class="tab-button active"><a href="#">الموقع و المساحة</a></button>
+                <button class="tab-button"><a href="property-form3.html">المميزات و الخدمات</a></button>
+                <button class="tab-button"><a href="property-form4.html">التسعير و الشروط</a></button>
+            </div>
+            <div>
+                <form>
+                    <div class="section-icon">
+                        <h2>الموقع و المساحة</h2>
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <hr>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="choose">عدد الغرف</label>
+                            <select name="" id="choose">
+                                <option>اختر عدد الغرف</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>+5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="choose">عدد دورات المياه</label>
+                            <select name="" id="choose">
+                                <option>اختر عدد دورات المياه...</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>+4</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="choose">عدد الطوابق</label>
+                            <select name="" id="choose">
+                                <option>اختر عدد الطوابق...</option>
+                                <option>طابق واحد</option>
+                                <option>طابقان </option>
+                                <option>ثلاث طوابق</option>
+                                <option>أكثر من ثلاثة</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">مساحة الأرض (بالمتر المربع)</label>
+                            <input type="number" placeholder="أدخل مساحة الأرض..." required> 
+                        </div>
+                        <div class="form-group">
+                            <label for="">مساحة البناء (بالمتر المربع)</label>
+                            <input type="number" placeholder="أدخل مساحة البناء..." required> 
+                        </div>
+                        <div class="form-group">
+                            <label for="">عمر العقار بالسنوات</label>
+                            <input type="number" placeholder="أدخل عمر العقار (بالسنوات)" required> 
+                        </div>
+                        <div>
+                            <button class="next"><a href="property-form3.html">التالي</a></button>
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+
+
+
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+    <footer class="main-foot">
+        <div class="container">
+            <div class="foot-top">
+                <div class="foot-right">
+                    <p>تابعنا على مواقع التواصل</p>
+                    <a href="https:/www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https:/www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https:/www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https:/www.snapchat.com"><i class="fa-brands fa-snapchat"></i></a>
+                    <a href="https:/www.tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+
+                <div class="foot-left">
+                    <h1>FBC</h1>
+                    <span>Future Bridge Company</span>
+                </div>
+            </div>
+
+            <hr>
+            <div class="foot-bottom">
+                <div class="right-bottom-foot">
+                    <p>جميع الحقوق محفوظة &copy;</p>
+                </div>
+                <div class="left-bottom-foot">
+                    <p>الخصوصية و شروط الاستخدام</p>
+                </div>
+            </div>
+        </div>        
+    </footer>
+
+
+
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+ 
+</body>
+</html>

@@ -1,0 +1,717 @@
+@media screen and (min-width:768px) and (max-width:1023px) {
+    :root{
+        font-size: 14px;
+    }
+    p::before{
+        display: none;
+    }
+}
+@media screen and (max-width:767px) {
+    :root{
+        font-size: 10px;
+    }
+    p::before{
+        display: none;
+    }
+}
+@media (max-width: 1023px){
+    .menu-toggle{
+        display: block; 
+    }
+    header .lower-div-header .lower-sec-header nav{
+        width: auto;
+    }
+    #menu{
+        display: flex;              
+        flex-direction: column;      
+        position: fixed;            
+        top: 0;
+        left: -110%;                
+        width: 75%;                
+        height: 100vh;
+        background: var(--mainColor);
+        padding: 2.5rem 1.5rem;
+        gap: 1rem;
+        transition: left 0.3s ease;
+        z-index: 1001;
+    }
+
+    #menu.open{
+        left: 0; 
+    }
+    #closeMenu{
+        background: none;
+        display: block; 
+        border: none;
+        font-size: 26px;
+        color: #fff;
+        margin-bottom: 1rem;
+        position: absolute;
+        right: 0;
+        width: 3rem;
+
+    }
+
+    #menu a, #menu li, #menu select, #menu button{
+        color: #fff; 
+    }
+
+    
+    header .lower-div-header .lower-sec-header nav ul{
+        justify-content: flex-start; 
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .hero-index div{
+        width: 100%;
+        text-align: center;
+    }
+    .hero-index div button{
+        margin: auto;
+    }
+    .hero-index div p:first-child{
+        position: relative;
+    }
+    .hero-index div p:first-child::before{
+        content: '';
+        height: 1rem;
+        width: 1rem;
+        background-color: var(--secondaryColor);
+        position: absolute;
+        top: 0.3rem;
+        left: 14rem; 
+    }
+}
+@media screen and (max-width:767px) {
+    .hero-index div{
+        width: 100%;
+        text-align: center;
+    }
+    .hero-index div button{
+        margin: auto;
+    }
+    .hero-index div p:first-child{
+        position: relative;
+    }
+    .hero-index div p:first-child::before{
+        content: '';
+        height: 1rem;
+        width: 1rem;
+        background-color: var(--secondaryColor);
+        position: absolute;
+        top: 0.3rem;
+        left: 4rem; 
+    }
+
+    
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .l-div-wilcome,.r-div-welcome{
+        width: 100%;
+        text-align: center;
+    }
+    .l-div-wilcome div,.r-div-welcome div{
+        text-align: center;
+        width: 70%;
+        margin: auto;
+    }
+    .r-div-welcome div button{
+        margin: auto;
+    }
+}
+@media screen and (max-width:767px) {
+        .l-div-wilcome,.r-div-welcome{
+        width: 100%;
+        text-align: center;
+    }
+    .l-div-wilcome div,.r-div-welcome div{
+        text-align: center;
+        width: 70%;
+        margin: auto;
+    }
+    .r-div-welcome div button{
+        margin: auto;
+    }
+
+
+}
+@media screen and (min-width:767px) and (max-width:1023px) {
+    .svgs{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 3rem;
+        justify-content: center;
+        width: 70%;
+        margin: auto;
+        
+    }
+    .lower-div-experts{
+        display: grid;
+        grid-template-columns: repeat(2,1fr) ;
+        height: 100%;
+    }
+}
+@media screen and (max-width:767px)  {
+    .svgs{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 50%;
+        margin: auto;
+        justify-content: center;
+        gap: 3rem;
+    } 
+    .lower-div-experts{
+        display: grid;
+        grid-template-columns: 1fr ;
+        height: 100%;
+    }
+    .lower-div-experts .card-div-index{
+        width: 80%;
+        margin: auto;
+        border-radius: 15%;
+    }
+    .lower-div-experts button{
+        width: 80%;
+        margin: auto;
+        border-radius: 15%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1300px) {
+    .WhyChoose .l-div-why{
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        padding: 2rem;
+    }
+    .WhyChoose .l-div-why .container{
+        text-align: center;
+        margin: auto;
+        width: 70%;
+        padding: 2rem 1rem;
+    }
+    .r-div-why{
+        display: none;
+    }
+}
+@media screen and (max-width:767px) {
+    .WhyChoose .l-div-why{
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        padding: 2rem;
+    }
+    .WhyChoose .l-div-why .container{
+        text-align: center;
+        margin: auto;
+        width: 70%;
+        padding: 2rem 1rem;
+    }
+    .r-div-why{
+        display: none;
+    }
+    .card-why{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 70%;
+        margin: auto;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .upper-div-projects{
+        text-align: center;
+    }
+    .upper-div-projects div{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .upper-div-projects div button{
+        margin: auto;
+    }
+    .lower-div-projects{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+    }
+    .lower-div-projects img{
+        width: 98%;
+        height: 60vh;
+        
+    }
+}
+@media screen and (max-width:767px) {
+    .upper-div-projects{
+        text-align: center;
+    }
+    .upper-div-projects div{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .upper-div-projects div button{
+        margin: auto;
+    }
+    .lower-div-projects{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .lower-div-projects img{
+        width: 98%;
+        height: 60vh;
+        
+    }    
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .testimonial-index{
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+@media screen and (max-width:767px) {
+    .testimonial-index{
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+        width: 98%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .how-index .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        text-align: center;
+        width: 80%;
+    }
+    .how-index .container div,p,form,button,h2{
+        text-align: center;
+        margin: 1rem auto;
+    }
+}
+@media screen and (max-width:767px) {
+    .how-index .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        text-align: center;
+        width: 80%;
+    }
+    .how-index .container div,p,form,button,h2{
+        text-align: center;
+        margin: 1rem auto;
+    }    
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .lower-div-news{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+        .lower-div-news img{
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .div-p-index{
+        margin-top:-1rem ;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .div-p-index p{
+        width: 100%;
+    }
+}
+@media screen and (max-width:767px) {
+    .lower-div-news{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .lower-div-news img{
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .div-p-index{
+        margin-top:-1rem ;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .div-p-index p{
+        width: 100%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .work-process .container .lower-div-process{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .work-process .container .lower-div-process div{
+        width: 50%;
+        margin: 2rem auto;
+        padding: 5rem 2rem ;
+    }
+    .work-process .container .lower-div-process div img{
+        margin-bottom: 2rem;
+        position: absolute;
+        top: -2.3rem;
+        left: 30%;
+    }
+
+}
+@media screen and (max-width:767px) {
+    .work-process .container .lower-div-process{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .work-process .container .lower-div-process div{
+        width: 50%;
+        margin: 2rem auto;
+        padding: 5rem 2rem ;
+    }
+    .work-process .container .lower-div-process div img{
+        margin-bottom: 2rem;
+        position: absolute;
+        top: -2.3rem;
+        left: 30%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1023px){
+    .expertIn-about .container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 3rem;
+       
+    }
+    .expertIn-about .container div{
+    background-color: var(--sixthColor);
+    border-radius: 1rem;
+    }
+}
+@media screen and (max-width:768px) {
+    .expertIn-about .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .expertIn-about .container div{
+        background-color: var(--sixthColor);
+        border-radius: 1rem;
+        width: 60%;
+        margin: auto;
+        
+    }
+
+}
+@media screen and (max-width:1023px) {
+    .team-about .lower-div-team{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .hero-contact .hero-contact-div{
+        width: 100%;
+        text-align: center;
+        padding: 5rem 0 0 0;
+    }
+
+}
+@media screen and (max-width:767px) {
+    .hero-contact .hero-contact-div{
+        width: 100%;
+        text-align: center;
+        padding: 5rem 0 0 0;
+        height: 35vh;
+    }
+    
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .getinTouch .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .getinTouch .container .l-div-contact{
+        width: 100%;
+    }
+    .getinTouch .container .r-div-contact{
+        text-align: center;
+    }
+    .card-div-touch{
+        width: 100%;
+        
+    }
+}
+@media screen and (max-width:767px) {
+    .getinTouch .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .getinTouch .container .l-div-contact{
+        width: 100%;
+    }
+    .getinTouch .container .r-div-contact{
+        text-align: center;
+    }
+    .card-div-touch{
+        width: 100%;
+        
+    }
+    
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .form-contact .container .lower-div-contact form .inputsDiv{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width:767px) {
+    .form-contact .container .lower-div-contact form .inputsDiv{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+}
+@media screen and (max-width:1023px) {
+    .hero-blog .hero-blog-div{
+        width: 100%;
+        text-align: center;
+        padding: 3rem 0 0 0;
+    }
+}
+@media screen and (max-width:767px) {
+    .lowerDivNews{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+}
+@media screen and (max-width:1023px) {
+    .hero-team-div{
+        width: 100%;
+        padding-top: 5rem;
+
+    }
+    .hero-team-div p{
+        font-size: 2rem;        
+    }
+    .hero-team-div h2{
+        font-size: 2rem;            
+    }
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .ourTeam{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width:767px) {
+    .ourTeam{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width:1023px) {
+    .r-div-sec{
+        display: none;
+    }
+    .Team-sec .container .l-div-sec{
+        width: 100%;
+        text-align: center;
+        height: 50vh;
+    }
+}
+@media screen and (max-width:1023px) {
+   .hero-projects .hero-blog-div{
+        padding-bottom: 8rem;
+   }
+    .hero-projects .hero-blog-div p{
+        text-align: center;
+        margin: auto;
+        margin-bottom: 0;
+   } 
+}
+@media screen and (min-width:768px) and (max-width:1023px){
+    .latest-projects .lowerDiv-project{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        
+    }
+}
+@media screen and (max-width:767px) {
+    .latest-projects .lowerDiv-project{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .latest-projects .lowerDiv-project .card-div-pro img{
+        height: 37rem;
+    }
+}
+@media screen and (max-width:1023px) {
+    .hero-prise div{
+        width: 100%;
+        text-align: center;
+    }
+    .hero-prise div p{
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width:1023px)   {
+    .lowerDivPrice{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5rem;
+        
+    }
+}
+@media screen and (max-width:1023px) {
+    #main-blog{
+        padding: 0 2rem;
+    }
+    .relatedNews .upperDivRelat{
+    display: flex;
+    flex-direction: column;
+    }
+
+    .relatedNews .lowerDivRelat{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .hero-services .OurServisec{
+        width: 100%;
+    }
+    .our-services-2 .lowerDivServices{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    }
+}
+@media screen and (max-width:767px) {
+    .hero-services .OurServisec{
+        width: 100%;
+    }
+    .our-services-2 .lowerDivServices{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .our-services-2 .lowerDivServices .cardServices{
+        margin: auto;
+        width: 60%;
+    }
+
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .lowerDivOffer{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        padding: 2rem;
+        gap: 2rem;
+    }
+    .lowerDivChServ{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        width: 100%;
+    }
+    .mainDivCh{
+        margin: auto;
+        width: 200%;
+        padding: 2rem;
+    }
+    .lowerDivChServ .cardDivChServ{
+        margin: auto;
+        text-align: center;
+        
+    }
+    .r-divChServ{
+        text-align: center;
+        padding: 2rem;
+    }
+    .chartDiv{
+        margin: 2rem auto;
+    }
+}
+@media screen and (max-width:768px) {
+    .lowerDivOffer{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        gap: 2rem;
+    }
+    .lowerDivChServ{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        width: 100%;
+    }
+    .mainDivCh{
+        margin: auto;
+        width: 200%;
+        padding: 2rem;
+    }
+    .lowerDivChServ .cardDivChServ{
+        margin: auto;
+        text-align: center;
+        
+    }
+    .r-divChServ{
+        text-align: center;
+        padding: 2rem;
+    }
+    .chartDiv{
+        margin: 2rem auto;
+    }
+    
+}
+
+@media screen and  (max-width:1023px) {
+    .hero-services-single .div-single-serv{
+        width: 100%;
+        background-color: var(--7Color);
+    }
+    .secondServSing{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+    }
+    .l-div-servsing{
+        width: 99%;
+    }
+    .r-div-servsing{
+        width: 99%;
+    }
+    .card-div-servsing,.lastDivInserv{
+        margin: 2rem auto;
+    }
+    .card-div-servsing button{
+        margin: 1rem auto;
+    }
+    .secDivSrvSin{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; 
+        text-align: center;  
+    }
+    .secDivSrvSin label{
+        display: block;
+    }
+}
+
+/* footer */
+@media screen and (min-width:768px) and (max-width:1023px) {
+    
+
+}
