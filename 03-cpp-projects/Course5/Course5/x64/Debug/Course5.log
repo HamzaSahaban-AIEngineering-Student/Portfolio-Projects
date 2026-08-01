@@ -1,0 +1,4 @@
+﻿  Problem21_Generate_Keys.cpp
+D:\Hamza\تعلم\my university\Second semester\Computer Programming\C++_Practise\Course5\Course5\Problem21_Generate_Keys.cpp(92,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Hamza\تعلم\my university\Second semester\Computer Programming\C++_Practise\Course5\Course5\Problem21_Generate_Keys.cpp(65,1): warning C4715: 'GetRandomCharacter': not all control paths return a value
+  Course5.vcxproj -> D:\Hamza\تعلم\my university\Second semester\Computer Programming\C++_Practise\Course5\x64\Debug\Course5.exe
