@@ -20,3 +20,59 @@ Output:
 Original array: 1 1 1 2 3
 1 is repeated 3 time(s)
 */
+
+/*
+1. Read positive number. 
+2. Read Array 
+3. print array
+4. Times repeated 
+5. display results
+*/
+
+#include <iostream>
+using namespace std;
+
+int ReadPositiveNumber(string Message) {
+	int Number;
+	do {
+		cout << Message << endl;
+		cin >> Number;
+	} while (Number <= 0);
+	return Number;
+}
+
+void ReadArray(int arr[100], int& arrLength) {
+	cout << "\nEnter Number of elements:\n";
+	cin >> arrLength;
+	cout << "\nEnter Array Elements:\n";
+	for (int i = 0; i < arrLength; i++) {
+		cout << "Element [" << i + 1 << "] : ";
+		cin >> arr[i];
+	}
+	cout << endl;
+}
+
+void PrintArray(int arr[100], int& arrLength) {
+	for (int i = 0; i < arrLength; i++) {
+		cout << arr[100] << " ";
+	}
+	cout << "\n";
+}
+
+int TimesRepeated(int number, int arr[100], int& arrLength) {
+	int count = 0;
+	for (int i = 0; i < arrLength; i++) {
+		if (arr[i] == number) {
+			count++;
+		}
+	}
+	return count;
+}
+
+int main() {
+	int arr[100], int arrLength, int numberToCheck;
+
+	ReadArray(arr, arrLength);
+	numberToCheck = ReadPositiveNumber("Enter Number to check: \n");
+
+}

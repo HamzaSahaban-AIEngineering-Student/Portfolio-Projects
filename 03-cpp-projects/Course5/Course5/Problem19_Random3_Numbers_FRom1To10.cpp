@@ -10,7 +10,6 @@ Output:
 
 #include <iostream>
 #include <cstdlib>
-
 using namespace std;
 
 int RandonNum(int From, int To) {
