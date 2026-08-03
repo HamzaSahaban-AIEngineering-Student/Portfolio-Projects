@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Root Rob Infrastructure</title>
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f916.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .heading-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .mono-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Dark Mode Background Mesh Glow */
+        .dark .glow-bg {
+            background-color: #070913;
+            background-image:
+                radial-gradient(circle at 50% 12%, rgba(16, 185, 129, 0.18) 0%, transparent 55%),
+                radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 15% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 45%);
+        }
+
+        /* Light Mode Background Mesh Glow */
+        .glow-bg {
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(circle at 50% 12%, rgba(16, 185, 129, 0.12) 0%, transparent 55%),
+                radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 15% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 45%);
+        }
+
+        /* Fullscreen Overlay Smooth Transition */
+        #menuOverlay {
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #menuOverlay.active {
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+        }
+
+        /* Gradient Top Border Card Container */
+        .top-glow-card {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .top-glow-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #06b6d4 0%, #10b981 50%, #6366f1 100%);
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+
+        .top-glow-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body
+    class="glow-bg min-h-screen flex flex-col justify-between text-slate-800 dark:text-slate-200 selection:bg-cyan-500 selection:text-white relative">
+
+    <!-- Header Navigation -->
+    <header
+        class="sticky top-0 z-50 px-4 sm:px-8 py-4 transition-colors duration-300 backdrop-blur-md bg-white/70 dark:bg-[#070913]/70 border-b border-slate-200/60 dark:border-white/10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center relative z-50">
+
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-2.5 group cursor-pointer">
+                <span class="relative flex h-3 w-3">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                </span>
+                <span
+                    class="heading-font font-black text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-white group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors">
+                    ROOT ROB<span class="text-cyan-500">.</span>
+                </span>
+            </a>
+
+            <!-- Right Controls & Hamburger Trigger Button -->
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle Button -->
+                <button onclick="toggleTheme()" aria-label="Toggle Theme"
+                    class="p-2.5 rounded-xl bg-slate-100 dark:bg-[#12172a] border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-cyan-500 transition-all text-xs">
+                    <span id="themeIcon">☀️</span>
+                </button>
+
+                <!-- Language Selector -->
+                <select id="langSelect" onchange="changeLanguage(this.value)" aria-label="Select Language"
+                    class="bg-slate-100 dark:bg-[#12172a] border border-slate-200 dark:border-white/10 text-xs font-semibold text-slate-700 dark:text-slate-200 rounded-xl px-3 py-2 focus:outline-none focus:border-cyan-500 cursor-pointer transition-all">
+                    <option value="en">EN</option>
+                    <option value="ar">AR</option>
+                    <option value="zh">ZH</option>
+                </select>
+
+                <!-- Hamburger Trigger Button -->
+                <button id="menuBtn" onclick="toggleOverlayMenu()" aria-label="Open Navigation Menu"
+                    class="p-2.5 rounded-xl bg-slate-100 dark:bg-[#12172a] border border-slate-300 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:border-cyan-500 transition-all cursor-pointer flex items-center justify-center group">
+                    <svg id="burgerIcon" class="w-6 h-6 transition-transform duration-300 group-hover:scale-110"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="closeIcon" class="w-6 h-6 hidden transition-transform duration-300 group-hover:rotate-90"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- FULLSCREEN GLASS OVERLAY MENU -->
+    <div id="menuOverlay"
+        class="fixed inset-0 z-40 bg-white/90 dark:bg-[#070913]/95 backdrop-blur-2xl opacity-0 invisible pointer-events-none flex flex-col justify-center items-center px-6 transition-all duration-500">
+
+        <div class="max-w-2xl w-full text-center space-y-6">
+            <div class="mono-font text-xs text-cyan-500 font-bold uppercase tracking-widest mb-4" data-aos="fade-down"
+                data-aos-anchor="#menuOverlay">[ SYSTEM_NAVIGATION_ROUTES ]</div>
+
+            <nav class="flex flex-col gap-4 text-xl sm:text-3xl font-extrabold heading-font">
+                <a href="/"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all"
+                    data-aos="fade-up" data-aos-delay="100" data-i18n="nav_home">Home</a>
+                <a href="/services.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all"
+                    data-aos="fade-up" data-aos-delay="200" data-i18n="nav_services">Services</a>
+                <a href="/case-studies.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all"
+                    data-aos="fade-up" data-aos-delay="300" data-i18n="nav_cases">Case Studies</a>
+                <a href="/contact.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all"
+                    data-aos="fade-up" data-aos-delay="400" data-i18n="nav_contact">Contact</a>
+                <a href="/privacy.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all text-slate-500 dark:text-slate-400 text-base sm:text-xl"
+                    data-aos="fade-up" data-aos-delay="500" data-i18n="nav_privacy">Privacy Policy</a>
+                <a href="/terms.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all text-slate-500 dark:text-slate-400 text-base sm:text-xl"
+                    data-aos="fade-up" data-aos-delay="600" data-i18n="nav_terms">Terms of Service</a>
+            </nav>
+
+            <div class="pt-6 border-t border-slate-200 dark:border-white/10" data-aos="zoom-in" data-aos-delay="700">
+                <a href="/portfolio/"
+                    class="inline-block bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-black px-8 py-4 rounded-2xl text-sm sm:text-base tracking-wider transition-all shadow-xl shadow-cyan-500/20"
+                    data-i18n="about_owner">
+                    About Owner &rarr;
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <main class="max-w-5xl mx-auto px-6 py-16 relative z-10">
+
+        <!-- Hero Header -->
+        <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
+            <div
+                class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-4 py-1.5 rounded-full mb-6 tracking-wider">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                <span data-i18n="badge_top">Legal & Operational Standards</span>
+            </div>
+
+            <h1 class="heading-font text-3xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight text-slate-900 dark:text-white"
+                data-i18n="hero_title">
+                TERMS OF SERVICE & <br>
+                <span class="text-cyan-600 dark:text-cyan-400">SERVICE LEVEL AGREEMENT</span>
+            </h1>
+
+            <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed mb-4"
+                data-i18n="hero_sub">
+                These terms govern all commercial software engineering, workflow automation, and self-hosted
+                infrastructure deployments provided by Root Rob Agency.
+            </p>
+            <p class="mono-font text-xs text-slate-500" data-i18n="last_updated">LAST UPDATED: AUGUST 2026</p>
+        </div>
+
+        <!-- Policy Sections -->
+        <div class="space-y-8 mb-16">
+
+            <!-- Section 1 -->
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-8 rounded-2xl shadow-lg"
+                data-aos="fade-up" data-aos-duration="800">
+                <div class="mono-font text-xs text-cyan-500 font-bold mb-2">[ TERMS // 01 ]</div>
+                <h2 class="heading-font text-xl font-bold text-slate-900 dark:text-white mb-4" data-i18n="t1_title">
+                    1. Scope of Commercial Services
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="t1_desc">
+                    Root Rob provides custom software development, workflow automations (n8n), AI agent deployments,
+                    database pipelines (PostgreSQL/NocoDB), and private Docker infrastructure setup. All deliverables
+                    are defined in the specific project intake agreement.
+                </p>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-8 rounded-2xl shadow-lg"
+                data-aos="fade-up" data-aos-duration="800">
+                <div class="mono-font text-xs text-emerald-500 font-bold mb-2">[ TERMS // 02 ]</div>
+                <h2 class="heading-font text-xl font-bold text-slate-900 dark:text-white mb-4" data-i18n="t2_title">
+                    2. Self-Hosted Infrastructure & Maintenance SLAs
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="t2_desc">
+                    When deploying software on dedicated client VPS servers, the client retains full ownership of
+                    hosting costs and access credentials. Optional monthly maintenance agreements cover Docker container
+                    updates, security patches, and pipeline health monitoring.
+                </p>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-8 rounded-2xl shadow-lg"
+                data-aos="fade-up" data-aos-duration="800">
+                <div class="mono-font text-xs text-cyan-500 font-bold mb-2">[ TERMS // 03 ]</div>
+                <h2 class="heading-font text-xl font-bold text-slate-900 dark:text-white mb-4" data-i18n="t3_title">
+                    3. Intellectual Property & Code Ownership
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="t3_desc">
+                    Upon full payment of setup fees, clients receive full operational rights to their custom workflows,
+                    database configurations, and proprietary scripts. Open-source components remain governed by their
+                    respective open-source licenses.
+                </p>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-8 rounded-2xl shadow-lg"
+                data-aos="fade-up" data-aos-duration="800">
+                <div class="mono-font text-xs text-emerald-500 font-bold mb-2">[ TERMS // 04 ]</div>
+                <h2 class="heading-font text-xl font-bold text-slate-900 dark:text-white mb-4" data-i18n="t4_title">
+                    4. Payment Terms & Setup Schedules
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="t4_desc">
+                    Projects require a mutually agreed initial setup deposit prior to deployment. Recurring server
+                    maintenance fees, if selected, are billed monthly. One-time setup fees are non-refundable once
+                    infrastructure engineering has commenced.
+                </p>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-8 rounded-2xl shadow-lg"
+                data-aos="fade-up" data-aos-duration="800">
+                <div class="mono-font text-xs text-cyan-500 font-bold mb-2">[ TERMS // 05 ]</div>
+                <h2 class="heading-font text-xl font-bold text-slate-900 dark:text-white mb-4" data-i18n="t5_title">
+                    5. Limitation of Liability & Data Integrity
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="t5_desc">
+                    Root Rob is not liable for data loss caused by unauthorized client server modifications,
+                    unmaintained VPS environments, or third-party API provider downtime (e.g., WhatsApp, Telegram).
+                    Clients are advised to maintain scheduled database backups.
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="border-t border-slate-200 dark:border-white/5 bg-white/80 dark:bg-[#070913]/90 p-8 text-center text-xs text-slate-500 transition-colors duration-300 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 ROOT ROB AGENCY. ALL RIGHTS RESERVED.</p>
+            <div class="flex items-center gap-5 text-slate-600 dark:text-slate-400">
+                <a href="https://www.facebook.com/profile.php?id=61587586629151" target="_blank"
+                    class="hover:text-cyan-500 transition-colors" title="Facebook">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/eng_hamza_shaban" target="_blank"
+                    class="hover:text-cyan-500 transition-colors" title="Instagram">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/hamza-shaban-568b7a366/" target="_blank"
+                    class="hover:text-cyan-500 transition-colors" title="LinkedIn">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+                <a href="https://github.com/HamzaSahaban-AIEngineering-Student" target="_blank"
+                    class="hover:text-cyan-500 transition-colors" title="GitHub">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeIcon.innerText = '🌙';
+            } else {
+                html.classList.add('dark');
+                themeIcon.innerText = '☀️';
+            }
+        }
+
+        // Fullscreen Overlay Toggle Handler
+        function toggleOverlayMenu() {
+            const overlay = document.getElementById('menuOverlay');
+            const burgerIcon = document.getElementById('burgerIcon');
+            const closeIcon = document.getElementById('closeIcon');
+
+            overlay.classList.toggle('active');
+            burgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+
+            if (overlay.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+                AOS.refresh();
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        const i18n = {
+            en: {
+                nav_home: "Home",
+                nav_services: "Services",
+                nav_cases: "Case Studies",
+                nav_contact: "Contact",
+                nav_privacy: "Privacy Policy",
+                nav_terms: "Terms of Service",
+                about_owner: "About Owner &rarr;",
+                badge_top: "Legal & Operational Standards",
+                hero_title: 'TERMS OF SERVICE & <br><span class="text-cyan-600 dark:text-cyan-400">SERVICE LEVEL AGREEMENT</span>',
+                hero_sub: "These terms govern all commercial software engineering, workflow automation, and self-hosted infrastructure deployments provided by Root Rob Agency.",
+                last_updated: "LAST UPDATED: AUGUST 2026",
+                t1_title: "1. Scope of Commercial Services",
+                t1_desc: "Root Rob provides custom software development, workflow automations (n8n), AI agent deployments, database pipelines (PostgreSQL/NocoDB), and private Docker infrastructure setup. All deliverables are defined in the specific project intake agreement.",
+                t2_title: "2. Self-Hosted Infrastructure & Maintenance SLAs",
+                t2_desc: "When deploying software on dedicated client VPS servers, the client retains full ownership of hosting costs and access credentials. Optional monthly maintenance agreements cover Docker container updates, security patches, and pipeline health monitoring.",
+                t3_title: "3. Intellectual Property & Code Ownership",
+                t3_desc: "Upon full payment of setup fees, clients receive full operational rights to their custom workflows, database configurations, and proprietary scripts. Open-source components remain governed by their respective open-source licenses.",
+                t4_title: "4. Payment Terms & Setup Schedules",
+                t4_desc: "Projects require a mutually agreed initial setup deposit prior to deployment. Recurring server maintenance fees, if selected, are billed monthly. One-time setup fees are non-refundable once infrastructure engineering has commenced.",
+                t5_title: "5. Limitation of Liability & Data Integrity",
+                t5_desc: "Root Rob is not liable for data loss caused by unauthorized client server modifications, unmaintained VPS environments, or third-party API provider downtime (e.g., WhatsApp, Telegram). Clients are advised to maintain scheduled database backups."
+            },
+            ar: {
+                nav_home: "الرئيسية",
+                nav_services: "الخدمات",
+                nav_cases: "دراسات الحالة",
+                nav_contact: "تواصل معنا",
+                nav_privacy: "سياسة الخصوصية",
+                nav_terms: "شروط الخدمة",
+                about_owner: "عن المالك &larr;",
+                badge_top: "المعايير القانونية والتشغيلية",
+                hero_title: 'شروط الخدمة و <br><span class="text-cyan-600 dark:text-cyan-400">اتفاقية مستوى التشغيل (SLA)</span>',
+                hero_sub: "تحدد هذه الشروط الضوابط القانونية والتشغيلية لكافة الخدمات البرمجية، أتمتة العمليات، وبناء البنية التحتية المقدمة من شركة Root Rob.",
+                last_updated: "آخر تحديث: أغسطس 2026",
+                t1_title: "1. نطاق الخدمات البرمجية والتجارية",
+                t1_desc: "تقدم Root Rob خدمات التطوير البرمجي المخصص، أتمتة تدفق العمليات (n8n)، بناء وكلاء الذكاء الاصطناعي، أنابيب قواعد البيانات (PostgreSQL/NocoDB)، وتجهيز بيئات Docker الخاصة. تُحدد مخرجات كل مشروع بناءً على اتفاقية التحليل المبرمة.",
+                t2_title: "2. البنية التحتية المستقلة واتفاقية الصيانة",
+                t2_desc: "عند نشر البرمجيات على سيرفرات VPS خاصة بالعميل، يتحمل العميل الملكية الكاملة لتكاليف الاستضافة وبيانات الاعتماد. تغطي اتفاقيات الصيانة الشهرية الاختيارية تحديثات حاويات Docker، الترقيعات الأمنية، ومراقبة سلامة الأتمتة.",
+                t3_title: "3. الملكية الفكرية وحقوق الكود",
+                t3_desc: "عند السداد الكامل لتكاليف التأسيس، يحصل العميل على حقوق التشغيل الكاملة لمسارات العمل المخصصة، إعدادات قواعد البيانات، والسكربتات المطورة. تظل المكونات مفتوحة المصدر خاضعة لتراخيصها الخاصة.",
+                t4_title: "4. الشروط المالية وجداول الدفع",
+                t4_desc: "تتطلب المشاريع دفعة تأسيس أولية يتفق عليها قبل بدء التنفيذ. تُدفع رسوم صيانة السيرفرات الشهرية (في حال اختيارها) بشكل دوري. تعتبر رسوم التأسيس لمرة واحدة غير قابلة للإعادة بمجرد البدء في هندسة البنية التحتية.",
+                t5_title: "5. حدود المسؤولية وسلامة البيانات",
+                t5_desc: "لا تتكفل Root Rob بمسؤولية فقدان البيانات الناتج عن تعديلات غير مصرح بها من العميل على السيرفر، أو تعطل خدمات API الخارجية (مثل WhatsApp أو Telegram). يُنصح العملاء بجدولة نسخ احتياطي دوري لقواعد البيانات."
+            },
+            zh: {
+                nav_home: "首页",
+                nav_services: "服务项目",
+                nav_cases: "案例研究",
+                nav_contact: "联系我们",
+                nav_privacy: "隐私政策",
+                nav_terms: "服务条款",
+                about_owner: "关于拥有者 &rarr;",
+                badge_top: "法律与运营标准",
+                hero_title: '服务条款与 <br><span class="text-cyan-600 dark:text-cyan-400">服务级别协议</span>',
+                hero_sub: "这些条款适用于 Root Rob Agency 提供的所有商业软件工程、工作流自动化和自托管基础设施部署。",
+                last_updated: "最后更新：2026 年 8 月",
+                t1_title: "1. 商业服务范围",
+                t1_desc: "Root Rob 提供定制软件开发、工作流自动化 (n8n)、AI 代理部署、数据库管道 (PostgreSQL/NocoDB) 和私有 Docker 基础设施设置。所有交付物均在具体的项目接入协议中定义。",
+                t2_title: "2. 自托管基础设施与维护 SLA",
+                t2_desc: "在专用客户 VPS 服务器上部署软件时，客户保留托管成本和访问凭据的完全所有权。可选的每月维护协议包括 Docker 容器更新、安全补丁和管道健康监控。",
+                t3_title: "3. 知识产权与代码所有权",
+                t3_desc: "在全额支付设置费用后，客户将获得其定制工作流、数据库配置和专有脚本的完全运营权。开源组件仍受其各自开源许可的约束。",
+                t4_title: "4. 付款条款与设置计划",
+                t4_desc: "项目在部署前需要双方同意的初始设置押金。如果选择，每月的定期服务器维护费按月结算。基础设施工程一旦开始，一次性设置费概不退还。",
+                t5_title: "5. 责任限制与数据完整性",
+                t5_desc: "Root Rob 不对因未经授权的客户服务器修改、未维护的 VPS 环境或第三方 API 提供商停机（例如 WhatsApp、Telegram）导致的数据丢失承担责任。建议客户保持定期数据库备份。"
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key]) {
+                    elem.innerHTML = i18n[lang][key];
+                }
+            });
+            document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        }
+    </script>
+</body>
+
+</html>

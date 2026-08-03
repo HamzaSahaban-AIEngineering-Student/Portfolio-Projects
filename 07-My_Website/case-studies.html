@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies & Implementations | Root Rob Infrastructure</title>
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f916.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .heading-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .mono-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Dark Mode Background Mesh Glow */
+        .dark .glow-bg {
+            background-color: #070913;
+            background-image:
+                radial-gradient(circle at 50% 12%, rgba(16, 185, 129, 0.18) 0%, transparent 55%),
+                radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 15% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 45%);
+        }
+
+        /* Light Mode Background Mesh Glow */
+        .glow-bg {
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(circle at 50% 12%, rgba(16, 185, 129, 0.12) 0%, transparent 55%),
+                radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 15% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 45%);
+        }
+
+        /* Fullscreen Overlay Smooth Transition */
+        #menuOverlay {
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #menuOverlay.active {
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+        }
+
+        /* Gradient Top Border Card Container */
+        .top-glow-card {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .top-glow-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #06b6d4 0%, #10b981 50%, #6366f1 100%);
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+
+        .top-glow-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body
+    class="glow-bg min-h-screen flex flex-col justify-between text-slate-800 dark:text-slate-200 selection:bg-cyan-500 selection:text-white relative">
+
+    <!-- Header Navigation -->
+    <header
+        class="sticky top-0 z-50 px-4 sm:px-8 py-4 transition-colors duration-300 backdrop-blur-md bg-white/70 dark:bg-[#070913]/70 border-b border-slate-200/60 dark:border-white/10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center relative z-50">
+
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-2.5 group cursor-pointer">
+                <span class="relative flex h-3 w-3">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                </span>
+                <span
+                    class="heading-font font-black text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-white group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors">
+                    ROOT ROB<span class="text-cyan-500">.</span>
+                </span>
+            </a>
+
+            <!-- Right Controls & Hamburger Trigger Button -->
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle Button -->
+                <button onclick="toggleTheme()" aria-label="Toggle Theme"
+                    class="p-2.5 rounded-xl bg-slate-100 dark:bg-[#12172a] border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-cyan-500 transition-all text-xs">
+                    <span id="themeIcon">☀️</span>
+                </button>
+
+                <!-- Language Selector -->
+                <select id="langSelect" onchange="changeLanguage(this.value)" aria-label="Select Language"
+                    class="bg-slate-100 dark:bg-[#12172a] border border-slate-200 dark:border-white/10 text-xs font-semibold text-slate-700 dark:text-slate-200 rounded-xl px-3 py-2 focus:outline-none focus:border-cyan-500 cursor-pointer transition-all">
+                    <option value="en">EN</option>
+                    <option value="ar">AR</option>
+                    <option value="zh">ZH</option>
+                </select>
+
+                <!-- Hamburger Trigger Button -->
+                <button id="menuBtn" onclick="toggleOverlayMenu()" aria-label="Open Navigation Menu"
+                    class="p-2.5 rounded-xl bg-slate-100 dark:bg-[#12172a] border border-slate-300 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:border-cyan-500 transition-all cursor-pointer flex items-center justify-center group">
+                    <svg id="burgerIcon" class="w-6 h-6 transition-transform duration-300 group-hover:scale-110"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="closeIcon" class="w-6 h-6 hidden transition-transform duration-300 group-hover:rotate-90"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- FULLSCREEN GLASS OVERLAY MENU -->
+    <div id="menuOverlay"
+        class="fixed inset-0 z-40 bg-white/90 dark:bg-[#070913]/95 backdrop-blur-2xl opacity-0 invisible pointer-events-none flex flex-col justify-center items-center px-6 transition-all duration-500">
+
+        <div class="max-w-2xl w-full text-center space-y-6">
+            <div class="mono-font text-xs text-cyan-500 font-bold uppercase tracking-widest mb-4" data-aos="fade-down"
+                data-aos-anchor="#menuOverlay">[ SYSTEM_NAVIGATION_ROUTES ]</div>
+
+            <nav class="flex flex-col gap-4 text-xl sm:text-3xl font-extrabold heading-font">
+                <a href="/"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all"
+                    data-aos="fade-up" data-aos-delay="100" data-i18n="nav_home">Home</a>
+                <a href="/services.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all"
+                    data-aos="fade-up" data-aos-delay="200" data-i18n="nav_services">Services</a>
+                <a href="/case-studies.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all"
+                    data-aos="fade-up" data-aos-delay="300" data-i18n="nav_cases">Case Studies</a>
+                <a href="/contact.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all"
+                    data-aos="fade-up" data-aos-delay="400" data-i18n="nav_contact">Contact</a>
+                <a href="/privacy.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all text-slate-500 dark:text-slate-400 text-base sm:text-xl"
+                    data-aos="fade-up" data-aos-delay="500" data-i18n="nav_privacy">Privacy Policy</a>
+                <a href="/terms.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all text-slate-500 dark:text-slate-400 text-base sm:text-xl"
+                    data-aos="fade-up" data-aos-delay="600" data-i18n="nav_terms">Terms of Service</a>
+            </nav>
+
+            <div class="pt-6 border-t border-slate-200 dark:border-white/10" data-aos="zoom-in" data-aos-delay="700">
+                <a href="/portfolio/"
+                    class="inline-block bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-black px-8 py-4 rounded-2xl text-sm sm:text-base tracking-wider transition-all shadow-xl shadow-cyan-500/20"
+                    data-i18n="about_owner">
+                    About Owner &rarr;
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <main class="max-w-6xl mx-auto px-6 py-16 relative z-10">
+
+        <!-- Hero Section -->
+        <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
+            <div
+                class="inline-flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-4 py-1.5 rounded-full mb-6 tracking-wider">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span data-i18n="badge_top">Verified Production Benchmarks</span>
+            </div>
+
+            <h1 class="heading-font text-3xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight text-slate-900 dark:text-white"
+                data-i18n="hero_title">
+                CASE STUDIES & <br>
+                <span class="text-cyan-600 dark:text-cyan-400">PRODUCTION DEPLOYMENTS</span>
+            </h1>
+
+            <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed mb-8"
+                data-i18n="hero_sub">
+                Real-world engineering implementations demonstrating zero-SaaS self-hosted AI architectures, database
+                automations, and privacy-first enterprise deployments.
+            </p>
+        </div>
+
+        <!-- Case Studies Grid -->
+        <div class="space-y-12 mb-16">
+
+            <!-- Case Study 1 -->
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-8 rounded-2xl shadow-lg"
+                data-aos="fade-up" data-aos-duration="900">
+                <div
+                    class="flex flex-wrap justify-between items-start gap-4 mb-6 border-b border-slate-100 dark:border-white/5 pb-4">
+                    <div>
+                        <div class="mono-font text-xs text-cyan-500 font-bold mb-1">[ IMPLEMENTATION // 01 ]</div>
+                        <h2 class="heading-font text-xl sm:text-2xl font-bold text-slate-900 dark:text-white"
+                            data-i18n="cs1_title">
+                            Automated WhatsApp Customer Agent & Live Database Sync
+                        </h2>
+                    </div>
+                    <span
+                        class="text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-lg"
+                        data-i18n="cs1_tag">Food & Hospitality Enterprise</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div
+                        class="bg-slate-50 dark:bg-[#12172a] p-4 rounded-xl border border-slate-200 dark:border-white/5 text-center">
+                        <span class="mono-font text-2xl font-extrabold text-emerald-500">95%</span>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="cs1_m1">Automated Inquiry
+                            Resolution</p>
+                    </div>
+                    <div
+                        class="bg-slate-50 dark:bg-[#12172a] p-4 rounded-xl border border-slate-200 dark:border-white/5 text-center">
+                        <span class="mono-font text-2xl font-extrabold text-cyan-500">$0</span>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="cs1_m2">Recurring Monthly
+                            SaaS Cost</p>
+                    </div>
+                    <div
+                        class="bg-slate-50 dark:bg-[#12172a] p-4 rounded-xl border border-slate-200 dark:border-white/5 text-center">
+                        <span class="mono-font text-2xl font-extrabold text-emerald-500">&lt; 1.2s</span>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="cs1_m3">Average System
+                            Latency</p>
+                    </div>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+                            <span data-i18n="lbl_challenge">Operational Challenge</span>
+                        </h3>
+                        <p class="leading-relaxed" data-i18n="cs1_challenge">
+                            The client faced massive customer query bottlenecks during peak operational hours, requiring
+                            staff to manually type menu choices, prices, and location details via WhatsApp, leading to
+                            missed orders and slow responses.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <span data-i18n="lbl_solution">Architectural Solution</span>
+                        </h3>
+                        <p class="leading-relaxed" data-i18n="cs1_solution">
+                            Deployed a self-hosted n8n pipeline integrated with WhatsApp API and a NocoDB/Excel database
+                            backend. The system queries active inventory in real time and delivers exact responses
+                            without human intervention.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2 -->
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-8 rounded-2xl shadow-lg"
+                data-aos="fade-up" data-aos-duration="900">
+                <div
+                    class="flex flex-wrap justify-between items-start gap-4 mb-6 border-b border-slate-100 dark:border-white/5 pb-4">
+                    <div>
+                        <div class="mono-font text-xs text-emerald-500 font-bold mb-1">[ IMPLEMENTATION // 02 ]</div>
+                        <h2 class="heading-font text-xl sm:text-2xl font-bold text-slate-900 dark:text-white"
+                            data-i18n="cs2_title">
+                            Autonomous AI Lead Engine & PostgreSQL Pipeline
+                        </h2>
+                    </div>
+                    <span
+                        class="text-xs font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 px-3 py-1 rounded-lg"
+                        data-i18n="cs2_tag">B2B Commercial Services</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div
+                        class="bg-slate-50 dark:bg-[#12172a] p-4 rounded-xl border border-slate-200 dark:border-white/5 text-center">
+                        <span class="mono-font text-2xl font-extrabold text-cyan-500">80%</span>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="cs2_m1">Response Time
+                            Reduction</p>
+                    </div>
+                    <div
+                        class="bg-slate-50 dark:bg-[#12172a] p-4 rounded-xl border border-slate-200 dark:border-white/5 text-center">
+                        <span class="mono-font text-2xl font-extrabold text-emerald-500">100%</span>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="cs2_m2">Data Sovereignty &
+                            Privacy</p>
+                    </div>
+                    <div
+                        class="bg-slate-50 dark:bg-[#12172a] p-4 rounded-xl border border-slate-200 dark:border-white/5 text-center">
+                        <span class="mono-font text-2xl font-extrabold text-cyan-500">24/7</span>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="cs2_m3">Unattended Lead
+                            Ingestion</p>
+                    </div>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+                            <span data-i18n="lbl_challenge">Operational Challenge</span>
+                        </h3>
+                        <p class="leading-relaxed" data-i18n="cs2_challenge">
+                            Scattered lead submission channels across web forms, social platforms, and messaging apps
+                            resulted in high lead loss and delayed follow-ups by sales engineers.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <span data-i18n="lbl_solution">Architectural Solution</span>
+                        </h3>
+                        <p class="leading-relaxed" data-i18n="cs2_solution">
+                            Engineered a multi-channel webhooks engine parsing incoming payloads directly into an
+                            isolated PostgreSQL database, triggering instant Telegram notifications to key staff
+                            members.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 3 -->
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-8 rounded-2xl shadow-lg"
+                data-aos="fade-up" data-aos-duration="900">
+                <div
+                    class="flex flex-wrap justify-between items-start gap-4 mb-6 border-b border-slate-100 dark:border-white/5 pb-4">
+                    <div>
+                        <div class="mono-font text-xs text-cyan-500 font-bold mb-1">[ IMPLEMENTATION // 03 ]</div>
+                        <h2 class="heading-font text-xl sm:text-2xl font-bold text-slate-900 dark:text-white"
+                            data-i18n="cs3_title">
+                            Private Docker & VPS Self-Hosting Migration
+                        </h2>
+                    </div>
+                    <span
+                        class="text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-lg"
+                        data-i18n="cs3_tag">Infrastructure & Security</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div
+                        class="bg-slate-50 dark:bg-[#12172a] p-4 rounded-xl border border-slate-200 dark:border-white/5 text-center">
+                        <span class="mono-font text-2xl font-extrabold text-emerald-500">0%</span>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="cs3_m1">Third-Party Data
+                            Exposure</p>
+                    </div>
+                    <div
+                        class="bg-slate-50 dark:bg-[#12172a] p-4 rounded-xl border border-slate-200 dark:border-white/5 text-center">
+                        <span class="mono-font text-2xl font-extrabold text-cyan-500">100%</span>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="cs3_m2">SSL & Cloudflare
+                            Protected</p>
+                    </div>
+                    <div
+                        class="bg-slate-50 dark:bg-[#12172a] p-4 rounded-xl border border-slate-200 dark:border-white/5 text-center">
+                        <span class="mono-font text-2xl font-extrabold text-emerald-500">Zero</span>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" data-i18n="cs3_m3">Per-Seat User
+                            License Fees</p>
+                    </div>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+                            <span data-i18n="lbl_challenge">Operational Challenge</span>
+                        </h3>
+                        <p class="leading-relaxed" data-i18n="cs3_challenge">
+                            Relying on multiple cloud SaaS subscriptions imposed escalating monthly per-user licensing
+                            costs and created serious compliance risks regarding customer data storage.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <span data-i18n="lbl_solution">Architectural Solution</span>
+                        </h3>
+                        <p class="leading-relaxed" data-i18n="cs3_solution">
+                            Configured dedicated private VPS instances deploying Dockerized container environments,
+                            secured via Nginx Proxy Manager SSL routing and Cloudflare security rules.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CTA Callout -->
+        <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 rounded-2xl p-8 sm:p-12 text-center shadow-lg"
+            data-aos="fade-up">
+            <h2 class="heading-font text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4"
+                data-i18n="cta_title">
+                Ready to Deploy Similar Infrastructure?
+            </h2>
+            <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed mb-8"
+                data-i18n="cta_sub">
+                Submit your project specifications or schedule an intake call to eliminate SaaS lock-in and automate
+                your enterprise operations.
+            </p>
+            <a href="/contact.html"
+                class="inline-block bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-extrabold px-8 py-4 rounded-xl text-xs sm:text-sm tracking-wider transition-all shadow-md"
+                data-i18n="cta_btn">
+                Start Intake Consultation &rarr;
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="border-t border-slate-200 dark:border-white/5 bg-white/80 dark:bg-[#070913]/90 p-8 text-center text-xs text-slate-500 transition-colors duration-300 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 ROOT ROB AGENCY. ALL RIGHTS RESERVED.</p>
+            <div class="flex items-center gap-5 text-slate-600 dark:text-slate-400">
+                <a href="https://www.facebook.com/profile.php?id=61587586629151" target="_blank"
+                    class="hover:text-cyan-500 transition-colors" title="Facebook">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/eng_hamza_shaban" target="_blank"
+                    class="hover:text-cyan-500 transition-colors" title="Instagram">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/hamza-shaban-568b7a366/" target="_blank"
+                    class="hover:text-cyan-500 transition-colors" title="LinkedIn">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+                <a href="https://github.com/HamzaSahaban-AIEngineering-Student" target="_blank"
+                    class="hover:text-cyan-500 transition-colors" title="GitHub">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeIcon.innerText = '🌙';
+            } else {
+                html.classList.add('dark');
+                themeIcon.innerText = '☀️';
+            }
+        }
+
+        // Fullscreen Overlay Toggle Handler
+        function toggleOverlayMenu() {
+            const overlay = document.getElementById('menuOverlay');
+            const burgerIcon = document.getElementById('burgerIcon');
+            const closeIcon = document.getElementById('closeIcon');
+
+            overlay.classList.toggle('active');
+            burgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+
+            if (overlay.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+                AOS.refresh();
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        const i18n = {
+            en: {
+                nav_home: "Home",
+                nav_services: "Services",
+                nav_cases: "Case Studies",
+                nav_contact: "Contact",
+                nav_privacy: "Privacy Policy",
+                nav_terms: "Terms of Service",
+                about_owner: "About Owner &rarr;",
+                badge_top: "Verified Production Benchmarks",
+                hero_title: 'CASE STUDIES & <br><span class="text-cyan-600 dark:text-cyan-400">PRODUCTION DEPLOYMENTS</span>',
+                hero_sub: "Real-world engineering implementations demonstrating zero-SaaS self-hosted AI architectures, database automations, and privacy-first enterprise deployments.",
+                lbl_challenge: "Operational Challenge",
+                lbl_solution: "Architectural Solution",
+                cs1_title: "Automated WhatsApp Customer Agent & Live Database Sync",
+                cs1_tag: "Food & Hospitality Enterprise",
+                cs1_m1: "Automated Inquiry Resolution",
+                cs1_m2: "Recurring Monthly SaaS Cost",
+                cs1_m3: "Average System Latency",
+                cs1_challenge: "The client faced massive customer query bottlenecks during peak operational hours, requiring staff to manually type menu choices, prices, and location details via WhatsApp, leading to missed orders and slow responses.",
+                cs1_solution: "Deployed a self-hosted n8n pipeline integrated with WhatsApp API and a NocoDB/Excel database backend. The system queries active inventory in real time and delivers exact responses without human intervention.",
+                cs2_title: "Autonomous AI Lead Engine & PostgreSQL Pipeline",
+                cs2_tag: "B2B Commercial Services",
+                cs2_m1: "Response Time Reduction",
+                cs2_m2: "Data Sovereignty & Privacy",
+                cs2_m3: "Unattended Lead Ingestion",
+                cs2_challenge: "Scattered lead submission channels across web forms, social platforms, and messaging apps resulted in high lead loss and delayed follow-ups by sales engineers.",
+                cs2_solution: "Engineered a multi-channel webhooks engine parsing incoming payloads directly into an isolated PostgreSQL database, triggering instant Telegram notifications to key staff members.",
+                cs3_title: "Private Docker & VPS Self-Hosting Migration",
+                cs3_tag: "Infrastructure & Security",
+                cs3_m1: "Third-Party Data Exposure",
+                cs3_m2: "SSL & Cloudflare Protected",
+                cs3_m3: "Per-Seat User License Fees",
+                cs3_challenge: "Relying on multiple cloud SaaS subscriptions imposed escalating monthly per-user licensing costs and created serious compliance risks regarding customer data storage.",
+                cs3_solution: "Configured dedicated private VPS instances deploying Dockerized container environments, secured via Nginx Proxy Manager SSL routing and Cloudflare security rules.",
+                cta_title: "Ready to Deploy Similar Infrastructure?",
+                cta_sub: "Submit your project specifications or schedule an intake call to eliminate SaaS lock-in and automate your enterprise operations.",
+                cta_btn: "Start Intake Consultation &rarr;"
+            },
+            ar: {
+                nav_home: "الرئيسية",
+                nav_services: "الخدمات",
+                nav_cases: "دراسات الحالة",
+                nav_contact: "تواصل معنا",
+                nav_privacy: "سياسة الخصوصية",
+                nav_terms: "شروط الخدمة",
+                about_owner: "عن المالك &larr;",
+                badge_top: "نتائج وإنجازات عملية موثقة",
+                hero_title: 'دراسات الحالة و <br><span class="text-cyan-600 dark:text-cyan-400">المشاريع المُنَفّذة</span>',
+                hero_sub: "نماذج حية تبين كفاءة الحلول البرمجية، وكلاء الذكاء الاصطناعي، وأتمتة قواعد البيانات المستقلة تماماً عن الاشتراكات الشهرية.",
+                lbl_challenge: "التحدي التشغيلي",
+                lbl_solution: "الحل الهندسي",
+                cs1_title: "أتمتة محادثات الواتساب ومزامنة قواعد البيانات الحية",
+                cs1_tag: "قطاع المطاعم والخدمات التجارية",
+                cs1_m1: "نسبة أتمتة الرد على الاستفسارات",
+                cs1_m2: "رسوم اشتراك سحابي شهري",
+                cs1_m3: "معدل سرعة استجابة النظام",
+                cs1_challenge: "كان العميل يواجه ضغطاً كبيراً في استقبال طلبات الزبائن خلال أوقات الذروة، مما تطلب إدخال بيانات المنيو والأسعار يدوياً عبر الواتساب وتسبب في تأخير الردود وفقدان الطلبات.",
+                cs1_solution: "تم بناء مسار عمل تلقائي عبر سيرفر n8n خاص مرتبط بقاعدة بيانات NocoDB وواجهة WhatsApp API. يقوم النظام باستعلام الأسعار والأصناف لحظياً والإجابة التلقائية دون تدخل بشري.",
+                cs2_title: "محرك الذكاء الاصطناعي وجلب العملاء عبر PostgreSQL",
+                cs2_tag: "خدمات الشركات B2B",
+                cs2_m1: "انخفاض زمني في سرعة معالجة الطلب",
+                cs2_m2: "استقلالية وخصوصية البيانات",
+                cs2_m3: "استقبال ومعالجة الطلبات تلقائياً",
+                cs2_challenge: "تشتت بيانات العملاء المحتملين عبر نماذج المواقع والمنصات المختلفة أدى إلى ضياع الفرص التجارية وتأخر فريق المبيعات في المتابعة.",
+                cs2_solution: "تصميم محرك Webhooks يستقبل البيانات من كافة المنصات ويدخلها مباشرة في قاعدة بيانات PostgreSQL مع إرسال إشعارات فورية عبر التليجرام للفريق.",
+                cs3_title: "ترحيل البنية التحتية إلى سيرفرات Docker و VPS خاصة",
+                cs3_tag: "الأمن الرقمي والبنية التحتية",
+                cs3_m1: "تسريب أو مشاركة بيانات مع أطراف خارجية",
+                cs3_m2: "حماية كاملة عبر SSL و Cloudflare",
+                cs3_m3: "رسوم اشتراك شهري لكل مستخدم",
+                cs3_challenge: "الاعتماد على منصات سحابية خارجية أدى لارتفاع التكاليف الشهرية بشكل متزايد وشكّل مخاطر تتعلق بخصوصية بيانات العملاء.",
+                cs3_solution: "تجهيز سيرفرات VPS خاصة وبناء بيئة Docker معزولة تماماً، وتأمين التوجيه وحماية البيانات عبر Nginx Proxy Manager و Cloudflare.",
+                cta_title: "هل أنت جاهز لتطوير بنية تحتية مماثلة لشركتك؟",
+                cta_sub: "أرسل تفاصيل مشروعك أو احجز جلسة استشارة فنية لبناء أنظمة أتمتة مستقلة بدون اشتراكات شهرية.",
+                cta_btn: "بدء طلب الاستشارة &larr;"
+            },
+            zh: {
+                nav_home: "首页",
+                nav_services: "服务项目",
+                nav_cases: "案例研究",
+                nav_contact: "联系我们",
+                nav_privacy: "隐私政策",
+                nav_terms: "服务条款",
+                about_owner: "关于拥有者 &rarr;",
+                badge_top: "经过验证的生产基准",
+                hero_title: '案例研究与 <br><span class="text-cyan-600 dark:text-cyan-400">生产部署</span>',
+                hero_sub: "展示零 SaaS 自托管 AI 架构、数据库自动化和隐私优先的企业部署的实际工程实现。",
+                lbl_challenge: "运营挑战",
+                lbl_solution: "架构解决方案",
+                cs1_title: "自动化 WhatsApp 客户代理与实时数据库同步",
+                cs1_tag: "餐饮与款待企业",
+                cs1_m1: "自动化查询解决率",
+                cs1_m2: "每月重复的 SaaS 成本",
+                cs1_m3: "平均系统延迟",
+                cs1_challenge: "客户在高峰营业时间面临巨大的客户查询瓶颈，需要员工通过 WhatsApp 手动输入菜单选择、价格和位置详细信息，导致错单和响应缓慢。",
+                cs1_solution: "部署了一个与 WhatsApp API 和 NocoDB/Excel 数据库后端集成的自托管 n8n 管道。系统实时查询活动库存并无需人工干预即可提供确切的响应。",
+                cs2_title: "自主 AI 线索引擎与 PostgreSQL 管道",
+                cs2_tag: "B2B 商业服务",
+                cs2_m1: "响应时间缩短",
+                cs2_m2: "数据主权与隐私",
+                cs2_m3: "无人值守线索接入",
+                cs2_challenge: "跨 Web 表单、社交平台和消息传递应用程序的分散线索提交渠道导致高线索流失和销售工程师的延迟跟进。",
+                cs2_solution: "工程化了一个多通道 Webhooks 引擎，将接收到的负载直接解析到隔离的 PostgreSQL 数据库中，从而向主要员工触发即时 Telegram 通知。",
+                cs3_title: "私有 Docker 与 VPS 自托管迁移",
+                cs3_tag: "基础设施与安全",
+                cs3_m1: "第三方数据暴露",
+                cs3_m2: "SSL 和 Cloudflare 受保护",
+                cs3_m3: "按套户的用户许可费",
+                cs3_challenge: "依赖多个云 SaaS 订阅导致每月每用户许可成本不断上升，并带来了有关客户数据存储的严重合规风险。",
+                cs3_solution: "配置了部署 Docker 化容器环境的专用私有 VPS 实例，通过 Nginx Proxy Manager SSL 路由和 Cloudflare 安全规则进行保护。",
+                cta_title: "准备部署类似的基础设施了吗？",
+                cta_sub: "提交您的项目规范或预约接入电话，以消除 SaaS 锁定并自动化您的企业运营。",
+                cta_btn: "开始接入咨询 &rarr;"
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key]) {
+                    elem.innerHTML = i18n[lang][key];
+                }
+            });
+            document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        }
+    </script>
+</body>
+
+</html>

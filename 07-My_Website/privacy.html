@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Root Rob Infrastructure</title>
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f916.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .heading-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .mono-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Dark Mode Background Mesh Glow */
+        .dark .glow-bg {
+            background-color: #070913;
+            background-image:
+                radial-gradient(circle at 50% 12%, rgba(16, 185, 129, 0.18) 0%, transparent 55%),
+                radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 15% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 45%);
+        }
+
+        /* Light Mode Background Mesh Glow */
+        .glow-bg {
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(circle at 50% 12%, rgba(16, 185, 129, 0.12) 0%, transparent 55%),
+                radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 15% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 45%);
+        }
+
+        /* Fullscreen Overlay Smooth Transition */
+        #menuOverlay {
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #menuOverlay.active {
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+        }
+
+        /* Gradient Top Border Card Container */
+        .top-glow-card {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .top-glow-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #06b6d4 0%, #10b981 50%, #6366f1 100%);
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+
+        .top-glow-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body
+    class="glow-bg min-h-screen flex flex-col justify-between text-slate-800 dark:text-slate-200 selection:bg-cyan-500 selection:text-white relative">
+
+    <!-- Header Navigation -->
+    <header
+        class="sticky top-0 z-50 px-4 sm:px-8 py-4 transition-colors duration-300 backdrop-blur-md bg-white/70 dark:bg-[#070913]/70 border-b border-slate-200/60 dark:border-white/10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center relative z-50">
+
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-2.5 group cursor-pointer">
+                <span class="relative flex h-3 w-3">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                </span>
+                <span
+                    class="heading-font font-black text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-white group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors">
+                    ROOT ROB<span class="text-cyan-500">.</span>
+                </span>
+            </a>
+
+            <!-- Right Controls & Hamburger Trigger Button -->
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle Button -->
+                <button onclick="toggleTheme()" aria-label="Toggle Theme"
+                    class="p-2.5 rounded-xl bg-slate-100 dark:bg-[#12172a] border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-cyan-500 transition-all text-xs">
+                    <span id="themeIcon">☀️</span>
+                </button>
+
+                <!-- Language Selector -->
+                <select id="langSelect" onchange="changeLanguage(this.value)" aria-label="Select Language"
+                    class="bg-slate-100 dark:bg-[#12172a] border border-slate-200 dark:border-white/10 text-xs font-semibold text-slate-700 dark:text-slate-200 rounded-xl px-3 py-2 focus:outline-none focus:border-cyan-500 cursor-pointer transition-all">
+                    <option value="en">EN</option>
+                    <option value="ar">AR</option>
+                    <option value="zh">ZH</option>
+                </select>
+
+                <!-- Hamburger Trigger Button -->
+                <button id="menuBtn" onclick="toggleOverlayMenu()" aria-label="Open Navigation Menu"
+                    class="p-2.5 rounded-xl bg-slate-100 dark:bg-[#12172a] border border-slate-300 dark:border-white/10 text-slate-800 dark:text-slate-200 hover:border-cyan-500 transition-all cursor-pointer flex items-center justify-center group">
+                    <svg id="burgerIcon" class="w-6 h-6 transition-transform duration-300 group-hover:scale-110"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="closeIcon" class="w-6 h-6 hidden transition-transform duration-300 group-hover:rotate-90"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- FULLSCREEN GLASS OVERLAY MENU -->
+    <div id="menuOverlay"
+        class="fixed inset-0 z-40 bg-white/90 dark:bg-[#070913]/95 backdrop-blur-2xl opacity-0 invisible pointer-events-none flex flex-col justify-center items-center px-6 transition-all duration-500">
+
+        <div class="max-w-2xl w-full text-center space-y-6">
+            <div class="mono-font text-xs text-cyan-500 font-bold uppercase tracking-widest mb-4" data-aos="fade-down"
+                data-aos-anchor="#menuOverlay">[ SYSTEM_NAVIGATION_ROUTES ]</div>
+
+            <nav class="flex flex-col gap-4 text-xl sm:text-3xl font-extrabold heading-font">
+                <a href="/"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all"
+                    data-aos="fade-up" data-aos-delay="100" data-i18n="nav_home">Home</a>
+                <a href="/services.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all"
+                    data-aos="fade-up" data-aos-delay="200" data-i18n="nav_services">Services</a>
+                <a href="/case-studies.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all"
+                    data-aos="fade-up" data-aos-delay="300" data-i18n="nav_cases">Case Studies</a>
+                <a href="/contact.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all"
+                    data-aos="fade-up" data-aos-delay="400" data-i18n="nav_contact">Contact</a>
+                <a href="/privacy.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all text-slate-500 dark:text-slate-400 text-base sm:text-xl"
+                    data-aos="fade-up" data-aos-delay="500" data-i18n="nav_privacy">Privacy Policy</a>
+                <a href="/terms.html"
+                    class="p-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 hover:text-cyan-500 transition-all text-slate-500 dark:text-slate-400 text-base sm:text-xl"
+                    data-aos="fade-up" data-aos-delay="600" data-i18n="nav_terms">Terms of Service</a>
+            </nav>
+
+            <div class="pt-6 border-t border-slate-200 dark:border-white/10" data-aos="zoom-in" data-aos-delay="700">
+                <a href="/portfolio/"
+                    class="inline-block bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-black px-8 py-4 rounded-2xl text-sm sm:text-base tracking-wider transition-all shadow-xl shadow-cyan-500/20"
+                    data-i18n="about_owner">
+                    About Owner &rarr;
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <main class="max-w-5xl mx-auto px-6 py-16 relative z-10">
+
+        <!-- Hero Header -->
+        <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
+            <div
+                class="inline-flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-4 py-1.5 rounded-full mb-6 tracking-wider">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span data-i18n="badge_top">Zero-SaaS Data Sovereignty</span>
+            </div>
+
+            <h1 class="heading-font text-3xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight text-slate-900 dark:text-white"
+                data-i18n="hero_title">
+                PRIVACY POLICY & <br>
+                <span class="text-cyan-600 dark:text-cyan-400">DATA PROTECTION STANDARDS</span>
+            </h1>
+
+            <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed mb-4"
+                data-i18n="hero_sub">
+                Root Rob operates under strict privacy principles. We engineer self-hosted, private infrastructures
+                ensuring zero unauthorized data extraction, resale, or third-party tracking.
+            </p>
+            <p class="mono-font text-xs text-slate-500" data-i18n="last_updated">LAST UPDATED: AUGUST 2026</p>
+        </div>
+
+        <!-- Policy Sections -->
+        <div class="space-y-8 mb-16">
+
+            <!-- Section 1 -->
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-8 rounded-2xl shadow-lg"
+                data-aos="fade-up" data-aos-duration="800">
+                <div class="mono-font text-xs text-cyan-500 font-bold mb-2">[ POLICY // 01 ]</div>
+                <h2 class="heading-font text-xl font-bold text-slate-900 dark:text-white mb-4" data-i18n="p1_title">
+                    1. Self-Hosted Infrastructure & Absolute Data Sovereignty
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="p1_desc">
+                    Unlike conventional cloud agencies that store your sensitive operational data on multi-tenant SaaS
+                    platforms, Root Rob deploys dedicated VPS and Dockerized container environments. Your client
+                    databases (PostgreSQL, NocoDB), AI knowledge vectors, and messaging logs remain isolated under your
+                    direct ownership and control.
+                </p>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-8 rounded-2xl shadow-lg"
+                data-aos="fade-up" data-aos-duration="800">
+                <div class="mono-font text-xs text-emerald-500 font-bold mb-2">[ POLICY // 02 ]</div>
+                <h2 class="heading-font text-xl font-bold text-slate-900 dark:text-white mb-4" data-i18n="p2_title">
+                    2. Information We Collect & Intake Processing
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-4"
+                    data-i18n="p2_desc">
+                    We collect only the essential information submitted voluntarily through our intake form or direct
+                    email communications:
+                </p>
+                <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-2">
+                    <li class="flex items-center gap-2"><span class="text-emerald-500">•</span> <span
+                            data-i18n="p2_b1">Contact Identity: Name, official email address, phone number / WhatsApp
+                            handle.</span></li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-500">•</span> <span
+                            data-i18n="p2_b2">Project Scope Parameters: Primary service selection, target database
+                            types, and estimated conversation volume.</span></li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-500">•</span> <span
+                            data-i18n="p2_b3">Technical Specifications: Workflow descriptions and hosting
+                            requirements.</span></li>
+                </ul>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-8 rounded-2xl shadow-lg"
+                data-aos="fade-up" data-aos-duration="800">
+                <div class="mono-font text-xs text-cyan-500 font-bold mb-2">[ POLICY // 03 ]</div>
+                <h2 class="heading-font text-xl font-bold text-slate-900 dark:text-white mb-4" data-i18n="p3_title">
+                    3. Form Transmission & Third-Party Service Handlers
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="p3_desc">
+                    Inbound form submissions on this website are transmitted via secure HTTPS AJAX calls to endpoint
+                    proxies (FormSubmit API or dedicated self-hosted n8n Webhooks). These handlers route payload
+                    contents directly to our official email (<code
+                        class="text-cyan-500 font-mono">h.shaban2007@hotmail.com</code>) or internal database nodes. We
+                    do not sell, lease, or monetize your contact payload to ad networks or data brokers.
+                </p>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-8 rounded-2xl shadow-lg"
+                data-aos="fade-up" data-aos-duration="800">
+                <div class="mono-font text-xs text-emerald-500 font-bold mb-2">[ POLICY // 04 ]</div>
+                <h2 class="heading-font text-xl font-bold text-slate-900 dark:text-white mb-4" data-i18n="p4_title">
+                    4. Infrastructure Security & Network Hardening
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="p4_desc">
+                    All web traffic to Root Rob domains is encrypted end-to-end via TLS/SSL certificates and filtered
+                    through Cloudflare edge protection. Self-hosted production nodes utilize Nginx Proxy Manager SSL
+                    routing, strict firewall rules, and containerized Docker isolation to mitigate unauthorized network
+                    intrusion and data tampering.
+                </p>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="top-glow-card bg-white dark:bg-[#0d1122] border border-slate-200 dark:border-white/10 p-8 rounded-2xl shadow-lg"
+                data-aos="fade-up" data-aos-duration="800">
+                <div class="mono-font text-xs text-cyan-500 font-bold mb-2">[ POLICY // 05 ]</div>
+                <h2 class="heading-font text-xl font-bold text-slate-900 dark:text-white mb-4" data-i18n="p5_title">
+                    5. Data Subject Rights & Direct Contact
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-6"
+                    data-i18n="p5_desc">
+                    You maintain the right to inspect, update, or request complete deletion of any lead records or
+                    project scope entries stored within our systems. To execute a data purge request or query our
+                    security setup, contact our founder directly:
+                </p>
+                <div
+                    class="p-4 bg-slate-50 dark:bg-[#12172a] rounded-xl border border-slate-200 dark:border-white/5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs">
+                    <div>
+                        <span class="font-bold text-slate-900 dark:text-white block">Hamza Shaban</span>
+                        <span class="text-slate-500 dark:text-slate-400">Founder & Systems Engineer — Root Rob
+                            Agency</span>
+                    </div>
+                    <a href="mailto:h.shaban2007@hotmail.com"
+                        class="bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-bold px-4 py-2 rounded-lg transition-all">
+                        h.shaban2007@hotmail.com
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="border-t border-slate-200 dark:border-white/5 bg-white/80 dark:bg-[#070913]/90 p-8 text-center text-xs text-slate-500 transition-colors duration-300 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 ROOT ROB AGENCY. ALL RIGHTS RESERVED.</p>
+            <div class="flex items-center gap-5 text-slate-600 dark:text-slate-400">
+                <a href="https://www.facebook.com/profile.php?id=61587586629151" target="_blank"
+                    class="hover:text-cyan-500 transition-colors" title="Facebook">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/eng_hamza_shaban" target="_blank"
+                    class="hover:text-cyan-500 transition-colors" title="Instagram">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/hamza-shaban-568b7a366/" target="_blank"
+                    class="hover:text-cyan-500 transition-colors" title="LinkedIn">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+                <a href="https://github.com/HamzaSahaban-AIEngineering-Student" target="_blank"
+                    class="hover:text-cyan-500 transition-colors" title="GitHub">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeIcon.innerText = '🌙';
+            } else {
+                html.classList.add('dark');
+                themeIcon.innerText = '☀️';
+            }
+        }
+
+        // Fullscreen Overlay Toggle Handler
+        function toggleOverlayMenu() {
+            const overlay = document.getElementById('menuOverlay');
+            const burgerIcon = document.getElementById('burgerIcon');
+            const closeIcon = document.getElementById('closeIcon');
+
+            overlay.classList.toggle('active');
+            burgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+
+            if (overlay.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+                AOS.refresh();
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        const i18n = {
+            en: {
+                nav_home: "Home",
+                nav_services: "Services",
+                nav_cases: "Case Studies",
+                nav_contact: "Contact",
+                nav_privacy: "Privacy Policy",
+                nav_terms: "Terms of Service",
+                about_owner: "About Owner &rarr;",
+                badge_top: "Zero-SaaS Data Sovereignty",
+                hero_title: 'PRIVACY POLICY & <br><span class="text-cyan-600 dark:text-cyan-400">DATA PROTECTION STANDARDS</span>',
+                hero_sub: "Root Rob operates under strict privacy principles. We engineer self-hosted, private infrastructures ensuring zero unauthorized data extraction, resale, or third-party tracking.",
+                last_updated: "LAST UPDATED: AUGUST 2026",
+                p1_title: "1. Self-Hosted Infrastructure & Absolute Data Sovereignty",
+                p1_desc: "Unlike conventional cloud agencies that store your sensitive operational data on multi-tenant SaaS platforms, Root Rob deploys dedicated VPS and Dockerized container environments. Your client databases (PostgreSQL, NocoDB), AI knowledge vectors, and messaging logs remain isolated under your direct ownership and control.",
+                p2_title: "2. Information We Collect & Intake Processing",
+                p2_desc: "We collect only the essential information submitted voluntarily through our intake form or direct email communications:",
+                p2_b1: "Contact Identity: Name, official email address, phone number / WhatsApp handle.",
+                p2_b2: "Project Scope Parameters: Primary service selection, target database types, and estimated conversation volume.",
+                p2_b3: "Technical Specifications: Workflow descriptions and hosting requirements.",
+                p3_title: "3. Form Transmission & Third-Party Service Handlers",
+                p3_desc: "Inbound form submissions on this website are transmitted via secure HTTPS AJAX calls to endpoint proxies (FormSubmit API or dedicated self-hosted n8n Webhooks). These handlers route payload contents directly to our official email (h.shaban2007@hotmail.com) or internal database nodes. We do not sell, lease, or monetize your contact payload to ad networks or data brokers.",
+                p4_title: "4. Infrastructure Security & Network Hardening",
+                p4_desc: "All web traffic to Root Rob domains is encrypted end-to-end via TLS/SSL certificates and filtered through Cloudflare edge protection. Self-hosted production nodes utilize Nginx Proxy Manager SSL routing, strict firewall rules, and containerized Docker isolation to mitigate unauthorized network intrusion and data tampering.",
+                p5_title: "5. Data Subject Rights & Direct Contact",
+                p5_desc: "You maintain the right to inspect, update, or request complete deletion of any lead records or project scope entries stored within our systems. To execute a data purge request or query our security setup, contact our founder directly:"
+            },
+            ar: {
+                nav_home: "الرئيسية",
+                nav_services: "الخدمات",
+                nav_cases: "دراسات الحالة",
+                nav_contact: "تواصل معنا",
+                nav_privacy: "سياسة الخصوصية",
+                nav_terms: "شروط الخدمة",
+                about_owner: "عن المالك &larr;",
+                badge_top: "استقلالية تامة وخصوصية البيانات",
+                hero_title: 'سياسة الخصوصية و <br><span class="text-cyan-600 dark:text-cyan-400">معايير حماية البيانات</span>',
+                hero_sub: "تلتزم شركة Root Rob بأعلى معايير الخصوصية. نبني بنية تحتية خاصة ذاتية الاستضافة لضمان عدم تسريب البيانات أو تتبعها أو بيعها لأي أطراف خارجية.",
+                last_updated: "آخر تحديث: أغسطس 2026",
+                p1_title: "1. الاستضافة الذاتية واستقلالية البيانات الكاملة",
+                p1_desc: "على عكس الشركات السحابية التقليدية التي تخزن بياناتك على منصات SaaS مدفوعة، تقوم Root Rob بتجهيز سيرفرات VPS خاصة وبيئات Docker معزولة. تبقى قواعد بيانات عملائك (PostgreSQL/NocoDB)، وكلاء الذكاء الاصطناعي، وسجلات المحادثات ملكاً كاملاً لك وتحت إدارتك المباشرة.",
+                p2_title: "2. البيانات التي نجمعها وآلية المعالجة",
+                p2_desc: "نجمع فقط البيانات الضرورية التي يتم إرسالها طواعية عبر نموذج التواصل أو البريد الإلكتروني المباشر:",
+                p2_b1: "بيانات الهوية والتواصل: الاسم، البريد الإلكتروني الرسمي، ورقم الهاتف / الواتساب.",
+                p2_b2: "متطلبات المشروع: نوع الخدمة المطلوبة، قواعد البيانات المستهدفة، وحجم المحادثات المتوقع.",
+                p2_b3: "المواصفات التقنية: شرح آلية العمل الحالية ومتطلبات الاستضافة.",
+                p3_title: "3. نقل البيانات ومعالجة طلبات النموذج",
+                p3_desc: "تُنقل البيانات المبتعثة عبر هذا الموقع باستخدام بروتوكول HTTPS المشفر إلى نقطة المعالجة (FormSubmit API أو Webhooks سيرفر n8n الخاص). تُوجه هذه البيانات مباشرة إلى بريدنا الرسمي (h.shaban2007@hotmail.com) أو إلى قواعد البيانات الداخلية. نحن لا نبيع ولا نؤجر بياناتك مطلقاً لأي شبكات إعلانية.",
+                p4_title: "4. أمان البنية التحتية وتأمين الشبكة",
+                p4_desc: "تُشفر كافة البيانات المنقولة عبر نطاقات Root Rob باستخدام شهادات SSL/TLS وتُفحص عبر شبكة Cloudflare. تعتمد السيرفرات الخاصة على Nginx Proxy Manager للتوجيه المشفر، جدران حماية صارمة، وعزل كامل داخل حاويات Docker للحد من أي اختراق.",
+                p5_title: "5. حقوق المستخدم والتواصل المباشر",
+                p5_desc: "يحق لك في أي وقت طلب مراجعة، تعديل، أو حذف كافة بياناتك المسجلة لدينا بشكل كامل. لطلب حذف البيانات أو الاستفسار عن إجراءات الأمان، يمكنك التواصل مباشرة مع المؤسس:"
+            },
+            zh: {
+                nav_home: "首页",
+                nav_services: "服务项目",
+                nav_cases: "案例研究",
+                nav_contact: "联系我们",
+                nav_privacy: "隐私政策",
+                nav_terms: "服务条款",
+                about_owner: "关于拥有者 &rarr;",
+                badge_top: "零 SaaS 数据主权",
+                hero_title: '隐私政策与 <br><span class="text-cyan-600 dark:text-cyan-400">数据保护标准</span>',
+                hero_sub: "Root Rob 在严格的隐私原则下运营。我们工程设计自托管私有基础设施，确保零未经授权的数据提取、转售或第三方跟踪。",
+                last_updated: "最后更新：2026 年 8 月",
+                p1_title: "1. 自托管基础设施与绝对数据主权",
+                p1_desc: "与将您的敏感运营数据存储在多租户 SaaS 平台上的传统云机构不同，Root Rob 部署专用 VPS 和 Docker 容器环境。您的客户数据库 (PostgreSQL、NocoDB)、AI 知识向量和消息传递日志保持独立，属于您的直接所有权和控制范围。",
+                p2_title: "2. 我们收集的信息与接入处理",
+                p2_desc: "我们仅收集通过我们的接入表单或直接电子邮件通信自愿提交的必要信息：",
+                p2_b1: "联系人身份：姓名、官方电子邮件地址、电话号码 / WhatsApp 账号。",
+                p2_b2: "项目范围参数：主要服务选择、目标数据库类型和估计的对话量。",
+                p2_b3: "技术规范：工作流描述和托管要求。",
+                p3_title: "3. 表单传输与第三方服务处理程序",
+                p3_desc: "此网站上的入站表单提交通过安全的 HTTPS AJAX 调用传输到端点代理 (FormSubmit API 或专用自托管 n8n Webhook)。这些处理程序将有效负载内容直接路由到我们的官方电子邮件 (h.shaban2007@hotmail.com) 或内部数据库节点。我们不会向广告网络或数据经纪人出售、出租或变现您的联系人有效负载。",
+                p4_title: "4. 基础设施安全与网络加固",
+                p4_desc: "发往 Root Rob 域的所有 Web 流量均通过 TLS/SSL 证书进行端到端加密，并由 Cloudflare 边缘保护过滤。自托管生产节点利用 Nginx Proxy Manager SSL 路由、严格的防火墙规则和容器化 Docker 隔离，以减少未经授权的网络入侵和数据篡改。",
+                p5_title: "5. 数据主体权利与直接联系",
+                p5_desc: "您保留检查、更新或要求完全删除存储在我们系统中的任何线索记录或项目范围条目的权利。要执行数据清除请求或查询我们的安全设置，请直接联系我们的创始人："
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key]) {
+                    elem.innerHTML = i18n[lang][key];
+                }
+            });
+            document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        }
+    </script>
+</body>
+
+</html>
