@@ -82,16 +82,36 @@
     <ClCompile Include="Problem21_Generate_Keys.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem22_RepeatedElementsCountInArray.cpp" />
-    <ClCompile Include="Problem23_FillArraywithrandomnumbersfrom1to100.cpp" />
-    <ClCompile Include="Problem24_MaxofRandomArray.cpp" />
-    <ClCompile Include="Problem25_MinOfRandomArray.cpp" />
-    <ClCompile Include="Problem26_SumofRandomArray.cpp" />
-    <ClCompile Include="Problem27_AverageOfRandomArray.cpp" />
-    <ClCompile Include="Problem28_CopyArray.cpp" />
-    <ClCompile Include="Problem29_CopyOnlyPrimeNumbers.cpp" />
-    <ClCompile Include="Problem30_Sum_of2_arrays_to_thirdOne.cpp" />
-    <ClCompile Include="Problem31_ShuffleOrderedArray.cpp" />
+    <ClCompile Include="Problem22_RepeatedElementsCountInArray.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem23_FillArraywithrandomnumbersfrom1to100.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem24_MaxofRandomArray.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem25_MinOfRandomArray.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem26_SumofRandomArray.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem27_AverageOfRandomArray.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem28_CopyArray.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem29_CopyOnlyPrimeNumbers.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem30_Sum_of2_arrays_to_thirdOne.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem31_ShuffleOrderedArray.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Problem32_CopyArrayInReverseOrder.cpp" />
     <ClCompile Include="Problem33_FillArrayWithKeys.cpp" />
   </ItemGroup>
