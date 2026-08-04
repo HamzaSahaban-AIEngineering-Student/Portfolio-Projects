@@ -19,16 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Problem16_All_Words_FromAAAToZZZ.cpp">
+    <ClCompile Include="Problem2.16_All_Words_FromAAAToZZZ.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem17_Guess_AThree_Letter_Password.cpp">
+    <ClCompile Include="Problem2.17_Guess_AThree_Letter_Password.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem18_EncryptDiscrypt_Text.cpp">
+    <ClCompile Include="Problem2.18_EncryptDiscrypt_Text.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem19_Random3_Numbers_FRom1To10.cpp">
+    <ClCompile Include="Problem2.19_Random3_Numbers_FRom1To10.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Problem2.11_Palindrome_Numbers.cpp">
@@ -52,9 +52,11 @@
     <ClCompile Include="Problem2.1_Multiplication_Table_1To10.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Problem2.34ReturnNumberIndexInArray.cpp" />
     <ClCompile Include="Problem2.2_PrintAllPrime_Numbers_From1ToN.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Problem2.35_CheckNumberInArray.cpp" />
     <ClCompile Include="Problem2.3_Perfect_Number.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -76,44 +78,46 @@
     <ClCompile Include="Problem2.9_Digit_Frequency.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem20_RandomSmallLetterCapitalLetterSpecialCandDigitinorder.cpp">
+    <ClCompile Include="Problem2.20_RandomSmallLetterCapitalLetterSpecialCandDigitinorder.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem21_Generate_Keys.cpp">
+    <ClCompile Include="Problem2.21_Generate_Keys.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem22_RepeatedElementsCountInArray.cpp">
+    <ClCompile Include="Problem2.22_RepeatedElementsCountInArray.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem23_FillArraywithrandomnumbersfrom1to100.cpp">
+    <ClCompile Include="Problem2.23_FillArraywithrandomnumbersfrom1to100.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem24_MaxofRandomArray.cpp">
+    <ClCompile Include="Problem2.24_MaxofRandomArray.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem25_MinOfRandomArray.cpp">
+    <ClCompile Include="Problem2.25_MinOfRandomArray.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem26_SumofRandomArray.cpp">
+    <ClCompile Include="Problem2.26_SumofRandomArray.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem27_AverageOfRandomArray.cpp">
+    <ClCompile Include="Problem2.27_AverageOfRandomArray.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem28_CopyArray.cpp">
+    <ClCompile Include="Problem2.28_CopyArray.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem29_CopyOnlyPrimeNumbers.cpp">
+    <ClCompile Include="Problem2.29_CopyOnlyPrimeNumbers.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem30_Sum_of2_arrays_to_thirdOne.cpp">
+    <ClCompile Include="Problem2.30_Sum_of2_arrays_to_thirdOne.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem31_ShuffleOrderedArray.cpp">
+    <ClCompile Include="Problem2.31_ShuffleOrderedArray.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem32_CopyArrayInReverseOrder.cpp" />
-    <ClCompile Include="Problem33_FillArrayWithKeys.cpp" />
+    <ClCompile Include="Problem2.32_CopyArrayInReverseOrder.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem2.33_FillArrayWithKeys.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
