@@ -52,11 +52,19 @@
     <ClCompile Include="Problem2.1_Multiplication_Table_1To10.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem2.34ReturnNumberIndexInArray.cpp" />
+    <ClCompile Include="Problem2.34ReturnNumberIndexInArray.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Problem2.2_PrintAllPrime_Numbers_From1ToN.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem2.35_CheckNumberInArray.cpp" />
+    <ClCompile Include="Problem2.35_CheckNumberInArray.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem2.36_AddArrayElementSimeDynamic.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem2.37_Resolve؛roblem28\2CopyArrayUsingAddArrayElement.cpp" />
     <ClCompile Include="Problem2.3_Perfect_Number.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -117,7 +125,9 @@
     <ClCompile Include="Problem2.32_CopyArrayInReverseOrder.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem2.33_FillArrayWithKeys.cpp" />
+    <ClCompile Include="Problem2.33_FillArrayWithKeys.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>

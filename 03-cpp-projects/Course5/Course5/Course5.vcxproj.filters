@@ -120,5 +120,11 @@
     <ClCompile Include="Problem2.35_CheckNumberInArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Problem2.36_AddArrayElementSimeDynamic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem2.37_Resolve؛roblem28\2CopyArrayUsingAddArrayElement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
