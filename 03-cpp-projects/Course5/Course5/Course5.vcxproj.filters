@@ -123,7 +123,16 @@
     <ClCompile Include="Problem2.36_AddArrayElementSimeDynamic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Problem2.37_Resolve؛roblem28\2CopyArrayUsingAddArrayElement.cpp">
+    <ClCompile Include="Problem2.37_Resolve؛roblem28\Problem2.37_2CopyArrayUsingAddArrayElement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem2.38_CopyOddNumbersToANewArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem2.39_CopyPrimeNumbersToANewArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem2.40_CopyDistinctNumbersToArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

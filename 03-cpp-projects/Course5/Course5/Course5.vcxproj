@@ -64,10 +64,19 @@
     <ClCompile Include="Problem2.36_AddArrayElementSimeDynamic.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem2.37_Resolve؛roblem28\2CopyArrayUsingAddArrayElement.cpp" />
+    <ClCompile Include="Problem2.37_Resolve؛roblem28\Problem2.37_2CopyArrayUsingAddArrayElement.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem2.38_CopyOddNumbersToANewArray.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Problem2.39_CopyPrimeNumbersToANewArray.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Problem2.3_Perfect_Number.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Problem2.40_CopyDistinctNumbersToArray.cpp" />
     <ClCompile Include="Problem2.4_Perfect_Number_From1ToN.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
