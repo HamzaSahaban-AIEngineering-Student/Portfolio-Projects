@@ -76,7 +76,9 @@
     <ClCompile Include="Problem2.3_Perfect_Number.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Problem2.40_CopyDistinctNumbersToArray.cpp" />
+    <ClCompile Include="Problem2.40_CopyDistinctNumbersToArray.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Problem2.4_Perfect_Number_From1ToN.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
