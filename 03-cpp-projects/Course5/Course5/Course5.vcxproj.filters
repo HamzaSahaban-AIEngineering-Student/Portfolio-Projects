@@ -171,5 +171,8 @@
     <ClCompile Include="Project1_Stone_Paper_Scissor_MySolution.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Project2_Math_Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
-﻿  Project1_Stone_Paper_Scissor.cpp
-  Project1_Stone_Paper_Scissor_MySolution.cpp
-  Generating Code...
-  Course5.vcxproj -> C:\Users\حمزة\OneDrive\Desktop\Portfolio\Portfolio-Projects\03-cpp-projects\Course5\x64\Debug\Course5.exe
+﻿  Project2_Math_Game.cpp
+C:\Users\حمزة\OneDrive\Desktop\Portfolio\Portfolio-Projects\03-cpp-projects\Course5\Course5\Project2_Math_Game.cpp(102,38): error C2365: 'Mix': redefinition; previous definition was 'enumerator'
+      C:\Users\حمزة\OneDrive\Desktop\Portfolio\Portfolio-Projects\03-cpp-projects\Course5\Course5\Project2_Math_Game.cpp(97,31):
+      see declaration of 'Mix'
+  
