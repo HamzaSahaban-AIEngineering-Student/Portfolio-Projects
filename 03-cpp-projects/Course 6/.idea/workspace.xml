@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
+  </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="354e34ef-829c-4db0-84f2-e80d2088bc18" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/03-cpp-projects.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/problem2_Breakpoint_&amp;_Memory_Values.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/problem3_More_About_Breakpoints.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/problem4.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Course5/Course5/Problem2.2_PrintAllPrime_Numbers_From1ToN" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Course5/Course5/Project2_Math_Game.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/unsuccessfulbuild" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/Course5.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/Course5.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/Course5.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/Course5.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/Problem2.2_PrintAllPrime_Numbers_From1ToN.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/Problem2.2_PrintAllPrime_Numbers_From1ToN.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/Project1_Stone_Paper_Scissor_MySolution.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/Project1_Stone_Paper_Scissor_MySolution.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/Cl.items.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/Cl.items.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/link.secondary.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/link.secondary.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Course5.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Project1_Stone_Paper_Scissor_MySolution.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/Project1_Stone_Paper_Scissor_MySolution.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/vc145.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/vc145.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/vc145.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/Course5/x64/Debug/vc145.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/x64/Debug/Course5.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/x64/Debug/Course5.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Course5/x64/Debug/Course5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Course5/x64/Debug/Course5.pdb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3JWeEuHYeD15OR9Pk0Up46VL8QV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;CidrDebugProfileConversion&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/user/Library/CloudStorage/GoogleDrive-h.shaban3@hotmail.com/Other computers/My Laptop/Hamza/Portfolio/Portfolio-Projects/03-cpp-projects/Course 6&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  }
+}</component>
+  <component name="SelectedDebugProfileService">{
+  &quot;profileIdByStamp&quot;: [],
+  &quot;modificationCount&quot;: 1
+}</component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="354e34ef-829c-4db0-84f2-e80d2088bc18" name="Changes" comment="" />
+      <created>1789781143536</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1789781143536</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
