@@ -1,6 +1,7 @@
 //
-// Created by User on 19/9/26.
+// Created by User on 25/9/26.
 //
+
 
 #include<iostream>
 using namespace std;
@@ -10,7 +11,8 @@ int MySum(int a, int b)
     s = a + b;
     return s;
 }
-int main() {
+int main()
+{
     int arr1[5] = { 200,100,50,25,30 };
     int a, b, c;
     a = 10;
