@@ -1,27 +1,25 @@
 # Integrated Traffic Light Controller
 
-A four-way traffic-light controller designed and simulated in **Logisim** as part of digital-logic coursework.
+A four-way traffic light controller designed and simulated in Logisim-evolution as a digital logic coursework project.
 
 ## Project files
 
-| File | Purpose |
-| --- | --- |
+| File | Description |
+|---|---|
 | `Project.circ` | Main Logisim circuit file. |
-| `Final_Project_*.pdf` | Final project report. |
-| `Project.docx` | Project documentation. |
-| `Final_State_Table_*.xlsx` | State-table documentation. |
-| `Screenshot*.png` | Screenshots of the circuit and project results. |
+| `Final_Project_Hamza_Shaban_120257122_Edited.pdf` | Final project report. |
+| `Final_State_Table_For_The_project.xlsx` | State table for the controller. |
+| `All_The_States.xlsx` | Supporting state information for the project. |
+| `Screenshot_for_the_circuit.png` | Screenshot of the completed circuit. |
 
-## How to run
+## How to run it
 
-1. Install Logisim-evolution.
-2. Open `Project.circ` using **File → Open**.
-3. Use the simulation controls in Logisim to inspect the circuit.
+1. Install and open Logisim-evolution.
+2. Open `Project.circ`.
+3. Use the simulation controls to explore the traffic-light controller.
 
-## Tools and topics
+## Topics
 
-`Logisim` · `Digital Logic` · `Traffic-Light Controller` · `State Tables`
+`Digital Logic` · `Logisim-evolution` · `State Tables` · `Traffic Light Controller`
 
-## Notes
-
-This is a coursework project. The report, state table, source document, and screenshots are included to document the design alongside the circuit file.
+> This is a university coursework project built independently.
