@@ -11,7 +11,7 @@ This repository is organised by topic and will continue to grow as I complete ne
 Designed and simulated a traffic-light controller using digital logic in Logisim.
 
 - Focus: Digital Logic, Logisim
-- [Open the project folder](./04-digital-logic-design)
+- [Open the full project](./04-digital-logic-design/integrated-traffic-light-controller)
 
 ### C++ Projects
 
