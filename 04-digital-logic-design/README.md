@@ -6,7 +6,7 @@ A collection of digital-logic circuits designed and simulated in **Logisim** as 
 
 A 4-way traffic-light controller designed and simulated with digital logic in Logisim.
 
-- [Open the circuit file](./Smart_4Way_Traffic_Light.circ)
+- [Open the full integrated traffic light project](./integrated-traffic-light-controller)
 - Tool: Logisim
 - Topics: digital logic, sequential logic, state-based control
 
