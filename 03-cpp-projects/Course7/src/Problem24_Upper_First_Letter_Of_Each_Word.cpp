@@ -14,16 +14,20 @@ string ReadStirng() {
     return StringFromTheUser;
 }
 
-void PrintFirsLetterOfEachLetter(string S1) {
+string UpperFirstLetterOfEachWord(string S1) {
     bool IsFirstLetter = true;
     for (int i = 0 ; i < S1.length(); i++) {
         if (S1[i] != ' ' && IsFirstLetter) {
-            cout <<toupper(S1[i]) << endl;
+            S1[i] = toupper(S1[i]);
         }
         IsFirstLetter = (S1[i] == ' ' ? true : false);
     }
+    return S1;
 }
 
 int main() {
-    PrintFirsLetterOfEachLetter(ReadStirng());
+    string s1 = ReadStirng();
+    cout << "\nString after conversion:\n";
+    s1 = UpperFirstLetterOfEachWord(s1);
+    cout << s1 << endl;
 }

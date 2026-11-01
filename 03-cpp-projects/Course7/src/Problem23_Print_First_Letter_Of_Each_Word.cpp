@@ -13,7 +13,7 @@ string ReadStirng() {
     return StringFromTheUser;
 }
 
-void PrintFirsLetterOfEachLetter(string S1) {
+void UpperFirstLetterOfEachWord(string S1) {
     bool IsFirstLetter = true;
     for (int i = 0 ; i < S1.length(); i++) {
         if (S1[i] != ' ' && IsFirstLetter) {
@@ -24,5 +24,5 @@ void PrintFirsLetterOfEachLetter(string S1) {
 }
 
 int main() {
-    PrintFirsLetterOfEachLetter(ReadStirng());
+    UpperFirstLetterOfEachWord(ReadStirng());
 }
